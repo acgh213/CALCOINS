@@ -13,7 +13,7 @@ QT_TRANSLATE_NOOP("bitcoin-core", ""
 <<<<<<< HEAD
 "rpcuser=calcoinrpc\n"
 =======
-"rpcuser=foocoinrpc\n"
+"rpcuser=calcoinrpc\n"
 >>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
 "rpcpassword=%s\n"
 "(you do not need to remember this password)\n"
@@ -133,10 +133,10 @@ QT_TRANSLATE_NOOP("bitcoin-core", "Specify connection timeout (in milliseconds)"
 QT_TRANSLATE_NOOP("bitcoin-core", "Specify data directory"),
 QT_TRANSLATE_NOOP("bitcoin-core", "Specify pid file (default: calcoin.pid)"),
 =======
-QT_TRANSLATE_NOOP("bitcoin-core", "Specify configuration file (default: foocoin.conf)"),
+QT_TRANSLATE_NOOP("bitcoin-core", "Specify configuration file (default: calcoin.conf)"),
 QT_TRANSLATE_NOOP("bitcoin-core", "Specify connection timeout (in milliseconds)"),
 QT_TRANSLATE_NOOP("bitcoin-core", "Specify data directory"),
-QT_TRANSLATE_NOOP("bitcoin-core", "Specify pid file (default: foocoin.pid)"),
+QT_TRANSLATE_NOOP("bitcoin-core", "Specify pid file (default: calcoin.pid)"),
 >>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
 QT_TRANSLATE_NOOP("bitcoin-core", "Specify your own public address"),
 QT_TRANSLATE_NOOP("bitcoin-core", "This help message"),

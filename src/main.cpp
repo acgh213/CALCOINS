@@ -1181,7 +1181,7 @@ bool CTransaction::ConnectInputs(MapPrevTx inputs,
 <<<<<<< HEAD
     // fMiner is true when called from the internal calcoin miner
 =======
-    // fMiner is true when called from the internal foocoin miner
+    // fMiner is true when called from the internal calcoin miner
 >>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
     // ... both are false when called from CTransaction::AcceptToMemoryPool
     if (!IsCoinBase())

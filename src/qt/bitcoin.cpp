@@ -124,7 +124,7 @@ int main(int argc, char *argv[])
 <<<<<<< HEAD
         if (boost::algorithm::istarts_with(argv[i], "calcoin:"))
 =======
-        if (boost::algorithm::istarts_with(argv[i], "foocoin:"))
+        if (boost::algorithm::istarts_with(argv[i], "calcoin:"))
 >>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
         {
             const char *strURI = argv[i];
@@ -181,9 +181,9 @@ int main(int argc, char *argv[])
     else
         app.setApplicationName("calcoin-qt");
 =======
-        app.setApplicationName("foocoin-qt-testnet");
+        app.setApplicationName("calcoin-qt-testnet");
     else
-        app.setApplicationName("foocoin-qt");
+        app.setApplicationName("calcoin-qt");
 >>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
 
     // ... then GUI settings:
@@ -291,7 +291,7 @@ int main(int argc, char *argv[])
 <<<<<<< HEAD
                     if (boost::algorithm::istarts_with(argv[i], "calcoin:"))
 =======
-                    if (boost::algorithm::istarts_with(argv[i], "foocoin:"))
+                    if (boost::algorithm::istarts_with(argv[i], "calcoin:"))
 >>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
                     {
                         const char *strURI = argv[i];

@@ -2,7 +2,7 @@ TEMPLATE = app
 <<<<<<< HEAD
 TARGET = Calcoins-qt
 =======
-TARGET = Foocoin-qt
+TARGET = Calcoins-qt
 >>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
 VERSION = 0.7.2
 INCLUDEPATH += src src/json src/qt

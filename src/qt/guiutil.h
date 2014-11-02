@@ -18,7 +18,7 @@ class SendCoinsRecipient;
 <<<<<<< HEAD
 /** Utility functions used by the calcoin-qt UI.
 =======
-/** Utility functions used by the foocoin-qt UI.
+/** Utility functions used by the calcoin-qt UI.
 >>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
  */
 namespace GUIUtil
@@ -37,7 +37,7 @@ namespace GUIUtil
 <<<<<<< HEAD
     // Parse "calcoin:" URI into recipient object, return true on succesful parsing
 =======
-    // Parse "foocoin:" URI into recipient object, return true on succesful parsing
+    // Parse "calcoin:" URI into recipient object, return true on succesful parsing
 >>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
     // See Bitcoin URI definition discussion here: https://bitcointalk.org/index.php?topic=33490.0
     bool parseBitcoinURI(const QUrl &uri, SendCoinsRecipient *out);

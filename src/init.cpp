@@ -143,10 +143,10 @@ bool AppInit(int argc, char* argv[])
                   "  calcoin [options] help                " + _("List commands") + "\n" +
                   "  calcoin [options] help <command>      " + _("Get help for a command") + "\n";
 =======
-                  "  foocoin [options]                     " + "\n" +
-                  "  foocoin [options] <command> [params]  " + _("Send command to -server or foocoin") + "\n" +
-                  "  foocoin [options] help                " + _("List commands") + "\n" +
-                  "  foocoin [options] help <command>      " + _("Get help for a command") + "\n";
+                  "  calcoin [options]                     " + "\n" +
+                  "  calcoin [options] <command> [params]  " + _("Send command to -server or foocoin") + "\n" +
+                  "  calcoin [options] help                " + _("List commands") + "\n" +
+                  "  calcoin [options] help <command>      " + _("Get help for a command") + "\n";
 >>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
 
             strUsage += "\n" + HelpMessage();
@@ -160,7 +160,7 @@ bool AppInit(int argc, char* argv[])
 <<<<<<< HEAD
             if (!IsSwitchChar(argv[i][0]) && !boost::algorithm::istarts_with(argv[i], "calcoin:"))
 =======
-            if (!IsSwitchChar(argv[i][0]) && !boost::algorithm::istarts_with(argv[i], "foocoin:"))
+            if (!IsSwitchChar(argv[i][0]) && !boost::algorithm::istarts_with(argv[i], "calcoin:"))
 >>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
                 fCommandLine = true;
 
@@ -235,8 +235,8 @@ std::string HelpMessage()
         "  -conf=<file>           " + _("Specify configuration file (default: calcoin.conf)") + "\n" +
         "  -pid=<file>            " + _("Specify pid file (default: calcoin.pid)") + "\n" +
 =======
-        "  -conf=<file>           " + _("Specify configuration file (default: foocoin.conf)") + "\n" +
-        "  -pid=<file>            " + _("Specify pid file (default: foocoin.pid)") + "\n" +
+        "  -conf=<file>           " + _("Specify configuration file (default: calcoin.conf)") + "\n" +
+        "  -pid=<file>            " + _("Specify pid file (default: calcoin.pid)") + "\n" +
 >>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
         "  -gen                   " + _("Generate coins") + "\n" +
         "  -gen=0                 " + _("Don't generate coins") + "\n" +
@@ -442,7 +442,7 @@ bool AppInit2()
 <<<<<<< HEAD
     // Make sure only a single calcoin process is using the data directory.
 =======
-    // Make sure only a single foocoin process is using the data directory.
+    // Make sure only a single calcoin process is using the data directory.
 >>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
     boost::filesystem::path pathLockFile = GetDataDir() / ".lock";
     FILE* file = fopen(pathLockFile.string().c_str(), "a"); // empty lock file; created if it doesn't exist.
@@ -605,7 +605,7 @@ bool AppInit2()
 <<<<<<< HEAD
     // requested to kill calcoin-qt during the last operation. If so, exit.
 =======
-    // requested to kill foocoin-qt during the last operation. If so, exit.
+    // requested to kill calcoin-qt during the last operation. If so, exit.
 >>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
     // As the program has not fully started yet, Shutdown() is possibly overkill.
     if (fRequestShutdown)

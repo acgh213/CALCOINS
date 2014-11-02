@@ -81,7 +81,7 @@ bool parseBitcoinURI(const QUrl &uri, SendCoinsRecipient *out)
 <<<<<<< HEAD
     if(uri.scheme() != QString("calcoin"))
 =======
-    if(uri.scheme() != QString("foocoin"))
+    if(uri.scheme() != QString("calcoin"))
 >>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
         return false;
 
@@ -141,11 +141,11 @@ bool parseBitcoinURI(QString uri, SendCoinsRecipient *out)
     {
         uri.replace(0, 11, "calcoin:");
 =======
-    //    Cannot handle this later, because foocoin:// will cause Qt to see the part after // as host,
+    //    Cannot handle this later, because calcoin:// will cause Qt to see the part after // as host,
     //    which will lowercase it (and thus invalidate the address).
-    if(uri.startsWith("foocoin://"))
+    if(uri.startsWith("calcoin://"))
     {
-        uri.replace(0, 11, "foocoin:");
+        uri.replace(0, 11, "calcoin:");
 >>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
     }
     QUrl uriInstance(uri);
@@ -375,7 +375,7 @@ boost::filesystem::path static GetAutostartFilePath()
 <<<<<<< HEAD
     return GetAutostartDir() / "calcoin.desktop";
 =======
-    return GetAutostartDir() / "foocoin.desktop";
+    return GetAutostartDir() / "calcoin.desktop";
 >>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
 }
 
@@ -417,7 +417,7 @@ bool SetStartOnSystemStartup(bool fAutoStart)
 <<<<<<< HEAD
         // Write a calcoin.desktop file to the autostart directory:
 =======
-        // Write a foocoin.desktop file to the autostart directory:
+        // Write a calcoin.desktop file to the autostart directory:
 >>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
         optionFile << "[Desktop Entry]\n";
         optionFile << "Type=Application\n";
@@ -448,10 +448,10 @@ HelpMessageBox::HelpMessageBox(QWidget *parent) :
         tr("Usage:") + "\n" +
         "  calcoin-qt [" + tr("command-line options") + "]                     " + "\n";
 =======
-    header = tr("foocoin-qt") + " " + tr("version") + " " +
+    header = tr("calcoin-qt") + " " + tr("version") + " " +
         QString::fromStdString(FormatFullVersion()) + "\n\n" +
         tr("Usage:") + "\n" +
-        "  foocoin-qt [" + tr("command-line options") + "]                     " + "\n";
+        "  calcoin-qt [" + tr("command-line options") + "]                     " + "\n";
 >>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
 
     coreOptions = QString::fromStdString(HelpMessage());
@@ -464,7 +464,7 @@ HelpMessageBox::HelpMessageBox(QWidget *parent) :
 <<<<<<< HEAD
     setWindowTitle(tr("calcoin-qt"));
 =======
-    setWindowTitle(tr("foocoin-qt"));
+    setWindowTitle(tr("calcoin-qt"));
 >>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
     setTextFormat(Qt::PlainText);
     // setMinimumWidth is ignored for QMessageBox so put in nonbreaking spaces to make it wider.

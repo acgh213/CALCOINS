@@ -86,7 +86,7 @@ QString QRCodeDialog::getURI()
 <<<<<<< HEAD
     QString ret = QString("calcoin:%1").arg(address);
 =======
-    QString ret = QString("foocoin:%1").arg(address);
+    QString ret = QString("calcoin:%1").arg(address);
 >>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
     int paramCount = 0;
 

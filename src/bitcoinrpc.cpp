@@ -545,7 +545,7 @@ Value setaccount(const Array& params, bool fHelp)
 <<<<<<< HEAD
             "setaccount <calcoin address> <account>\n"
 =======
-            "setaccount <foocoin address> <account>\n"
+            "setaccount <calcoin address> <account>\n"
 >>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
             "Sets the account associated with the given address.");
 
@@ -579,7 +579,7 @@ Value getaccount(const Array& params, bool fHelp)
 <<<<<<< HEAD
             "getaccount <calcoin address>\n"
 =======
-            "getaccount <foocoin address>\n"
+            "getaccount <calcoin address>\n"
 >>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
             "Returns the account associated with the given address.");
 
@@ -655,7 +655,7 @@ Value sendtoaddress(const Array& params, bool fHelp)
 <<<<<<< HEAD
             "sendtoaddress <calcoin address> <amount> [comment] [comment-to]\n"
 =======
-            "sendtoaddress <foocoin address> <amount> [comment] [comment-to]\n"
+            "sendtoaddress <calcoin address> <amount> [comment] [comment-to]\n"
 >>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
             "<amount> is a real and is rounded to the nearest 0.00000001"
             + HelpRequiringPassphrase());
@@ -691,7 +691,7 @@ Value signmessage(const Array& params, bool fHelp)
 <<<<<<< HEAD
             "signmessage <calcoin address> <message>\n"
 =======
-            "signmessage <foocoin address> <message>\n"
+            "signmessage <calcoin address> <message>\n"
 >>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
             "Sign a message with the private key of an address");
 
@@ -730,7 +730,7 @@ Value verifymessage(const Array& params, bool fHelp)
 <<<<<<< HEAD
             "verifymessage <calcoin address> <signature> <message>\n"
 =======
-            "verifymessage <foocoin address> <signature> <message>\n"
+            "verifymessage <calcoin address> <signature> <message>\n"
 >>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
             "Verify a signed message");
 
@@ -772,8 +772,8 @@ Value getreceivedbyaddress(const Array& params, bool fHelp)
             "getreceivedbyaddress <calcoin address> [minconf=1]\n"
             "Returns the total amount received by <calcoin address> in transactions with at least [minconf] confirmations.");
 =======
-            "getreceivedbyaddress <foocoin address> [minconf=1]\n"
-            "Returns the total amount received by <foocoin address> in transactions with at least [minconf] confirmations.");
+            "getreceivedbyaddress <calcoin address> [minconf=1]\n"
+            "Returns the total amount received by <calcoin address> in transactions with at least [minconf] confirmations.");
 >>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
 
     // FooCoin address
@@ -997,7 +997,7 @@ Value sendfrom(const Array& params, bool fHelp)
 <<<<<<< HEAD
             "sendfrom <fromaccount> <to calcoin address> <amount> [minconf=1] [comment] [comment-to]\n"
 =======
-            "sendfrom <fromaccount> <to foocoin address> <amount> [minconf=1] [comment] [comment-to]\n"
+            "sendfrom <fromaccount> <to calcoin address> <amount> [minconf=1] [comment] [comment-to]\n"
 >>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
             "<amount> is a real and is rounded to the nearest 0.00000001"
             + HelpRequiringPassphrase());
@@ -1866,8 +1866,8 @@ Value validateaddress(const Array& params, bool fHelp)
             "validateaddress <calcoin address>\n"
             "Return information about <calcoin address>.");
 =======
-            "validateaddress <foocoin address>\n"
-            "Return information about <foocoin address>.");
+            "validateaddress <calcoin address>\n"
+            "Return information about <calcoin address>.");
 >>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
 
     CBitcoinAddress address(params[0].get_str());
@@ -2447,7 +2447,7 @@ string HTTPPost(const string& strMsg, const map<string,string>& mapRequestHeader
 <<<<<<< HEAD
       << "User-Agent: calcoin-json-rpc/" << FormatFullVersion() << "\r\n"
 =======
-      << "User-Agent: foocoin-json-rpc/" << FormatFullVersion() << "\r\n"
+      << "User-Agent: calcoin-json-rpc/" << FormatFullVersion() << "\r\n"
 >>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
       << "Host: 127.0.0.1\r\n"
       << "Content-Type: application/json\r\n"
@@ -2482,7 +2482,7 @@ static string HTTPReply(int nStatus, const string& strMsg, bool keepalive)
 <<<<<<< HEAD
             "Server: calcoin-json-rpc/%s\r\n"
 =======
-            "Server: foocoin-json-rpc/%s\r\n"
+            "Server: calcoin-json-rpc/%s\r\n"
 >>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
             "WWW-Authenticate: Basic realm=\"jsonrpc\"\r\n"
             "Content-Type: text/html\r\n"
@@ -2513,7 +2513,7 @@ static string HTTPReply(int nStatus, const string& strMsg, bool keepalive)
 <<<<<<< HEAD
             "Server: calcoin-json-rpc/%s\r\n"
 =======
-            "Server: foocoin-json-rpc/%s\r\n"
+            "Server: calcoin-json-rpc/%s\r\n"
 >>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
             "\r\n"
             "%s",
@@ -2893,7 +2893,7 @@ void ThreadRPCServer2(void* parg)
 <<<<<<< HEAD
         string strWhatAmI = "To use calcoin";
 =======
-        string strWhatAmI = "To use foocoin";
+        string strWhatAmI = "To use calcoin";
 >>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
         if (mapArgs.count("-server"))
             strWhatAmI = strprintf(_("To use the %s option"), "\"-server\"");
@@ -2905,7 +2905,7 @@ void ThreadRPCServer2(void* parg)
 <<<<<<< HEAD
               "rpcuser=calcoinrpc\n"
 =======
-              "rpcuser=foocoinrpc\n"
+              "rpcuser=calcoinrpc\n"
 >>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
               "rpcpassword=%s\n"
               "(you do not need to remember this password)\n"

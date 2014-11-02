@@ -40,7 +40,7 @@ Value importprivkey(const Array& params, bool fHelp)
 <<<<<<< HEAD
             "importprivkey <calcoin private key> [label]\n"
 =======
-            "importprivkey <foocoin private key> [label]\n"
+            "importprivkey <calcoin private key> [label]\n"
 >>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
             "Adds a private key (as returned by dumpprivkey) to your wallet.");
 
@@ -82,8 +82,8 @@ Value dumpprivkey(const Array& params, bool fHelp)
 	    "dumpprivkey <calcoin address>\n"
 	    "Reveals the private key corresponding to <calcoin address>.");
 =======
-	    "dumpprivkey <foocoin address>\n"
-	    "Reveals the private key corresponding to <foocoin address>.");
+	    "dumpprivkey <calcoin address>\n"
+	    "Reveals the private key corresponding to <calcoin address>.");
 >>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
 
     string strAddress = params[0].get_str();
