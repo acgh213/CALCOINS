@@ -38,9 +38,9 @@ Value importprivkey(const Array& params, bool fHelp)
     if (fHelp || params.size() < 1 || params.size() > 2)
         throw runtime_error(
 <<<<<<< HEAD
-            "importprivkey <calcoin private key> [label]\n"
+            "importprivkey <calcoins private key> [label]\n"
 =======
-            "importprivkey <calcoin private key> [label]\n"
+            "importprivkey <calcoins private key> [label]\n"
 >>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
             "Adds a private key (as returned by dumpprivkey) to your wallet.");
 
@@ -79,11 +79,11 @@ Value dumpprivkey(const Array& params, bool fHelp)
     if (fHelp || params.size() != 1)
         throw runtime_error(
 <<<<<<< HEAD
-	    "dumpprivkey <calcoin address>\n"
-	    "Reveals the private key corresponding to <calcoin address>.");
+	    "dumpprivkey <calcoins address>\n"
+	    "Reveals the private key corresponding to <calcoins address>.");
 =======
-	    "dumpprivkey <calcoin address>\n"
-	    "Reveals the private key corresponding to <calcoin address>.");
+	    "dumpprivkey <calcoins address>\n"
+	    "Reveals the private key corresponding to <calcoins address>.");
 >>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
 
     string strAddress = params[0].get_str();

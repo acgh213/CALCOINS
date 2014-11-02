@@ -1179,9 +1179,9 @@ bool CTransaction::ConnectInputs(MapPrevTx inputs,
     // Take over previous transactions' spent pointers
     // fBlock is true when this is called from AcceptBlock when a new best-block is added to the blockchain
 <<<<<<< HEAD
-    // fMiner is true when called from the internal calcoin miner
+    // fMiner is true when called from the internal calcoins miner
 =======
-    // fMiner is true when called from the internal calcoin miner
+    // fMiner is true when called from the internal calcoins miner
 >>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
     // ... both are false when called from CTransaction::AcceptToMemoryPool
     if (!IsCoinBase())

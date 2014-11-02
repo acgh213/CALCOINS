@@ -122,9 +122,9 @@ int main(int argc, char *argv[])
     for (int i = 1; i < argc; i++)
     {
 <<<<<<< HEAD
-        if (boost::algorithm::istarts_with(argv[i], "calcoin:"))
+        if (boost::algorithm::istarts_with(argv[i], "calcoins:"))
 =======
-        if (boost::algorithm::istarts_with(argv[i], "calcoin:"))
+        if (boost::algorithm::istarts_with(argv[i], "calcoins:"))
 >>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
         {
             const char *strURI = argv[i];
@@ -177,13 +177,13 @@ int main(int argc, char *argv[])
     app.setOrganizationDomain("we-have-no-domain-yet.nex");
     if(GetBoolArg("-testnet")) // Separate UI settings for testnet
 <<<<<<< HEAD
-        app.setApplicationName("calcoin-qt-testnet");
+        app.setApplicationName("calcoins-qt-testnet");
     else
-        app.setApplicationName("calcoin-qt");
+        app.setApplicationName("calcoins-qt");
 =======
-        app.setApplicationName("calcoin-qt-testnet");
+        app.setApplicationName("calcoins-qt-testnet");
     else
-        app.setApplicationName("calcoin-qt");
+        app.setApplicationName("calcoins-qt");
 >>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
 
     // ... then GUI settings:
@@ -289,9 +289,9 @@ int main(int argc, char *argv[])
                 for (int i = 1; i < argc; i++)
                 {
 <<<<<<< HEAD
-                    if (boost::algorithm::istarts_with(argv[i], "calcoin:"))
+                    if (boost::algorithm::istarts_with(argv[i], "calcoins:"))
 =======
-                    if (boost::algorithm::istarts_with(argv[i], "calcoin:"))
+                    if (boost::algorithm::istarts_with(argv[i], "calcoins:"))
 >>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
                     {
                         const char *strURI = argv[i];

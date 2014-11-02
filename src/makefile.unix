@@ -121,9 +121,9 @@ OBJS= \
 
 
 <<<<<<< HEAD
-all: calcoind
+all: calcoinsd
 =======
-all: calcoind
+all: calcoinsd
 >>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
 
 # auto-generated dependencies:
@@ -146,9 +146,9 @@ obj/%.o: %.cpp
 	  rm -f $(@:%.o=%.d)
 
 <<<<<<< HEAD
-calcoind: $(OBJS:obj/%=obj/%)
+calcoinsd: $(OBJS:obj/%=obj/%)
 =======
-calcoind: $(OBJS:obj/%=obj/%)
+calcoinsd: $(OBJS:obj/%=obj/%)
 >>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
 	$(CXX) $(xCXXFLAGS) -o $@ $^ $(xLDFLAGS) $(LIBS)
 
@@ -162,17 +162,17 @@ obj-test/%.o: test/%.cpp
 	  rm -f $(@:%.o=%.d)
 
 <<<<<<< HEAD
-test_calcoind: $(TESTOBJS) $(filter-out obj/init.o,$(OBJS:obj/%=obj/%))
+test_calcoinsd: $(TESTOBJS) $(filter-out obj/init.o,$(OBJS:obj/%=obj/%))
 	$(CXX) $(xCXXFLAGS) -o $@ $(LIBPATHS) $^ -Wl,-B$(LMODE) -lboost_unit_test_framework $(xLDFLAGS) $(LIBS)
 
 clean:
-	-rm -f calcoind test_calcoinsd
+	-rm -f calcoinsd test_calcoinsd
 =======
-test_calcoind: $(TESTOBJS) $(filter-out obj/init.o,$(OBJS:obj/%=obj/%))
+test_calcoinsd: $(TESTOBJS) $(filter-out obj/init.o,$(OBJS:obj/%=obj/%))
 	$(CXX) $(xCXXFLAGS) -o $@ $(LIBPATHS) $^ -Wl,-B$(LMODE) -lboost_unit_test_framework $(xLDFLAGS) $(LIBS)
 
 clean:
-	-rm -f calcoind test_foocoind
+	-rm -f calcoinsd test_foocoind
 >>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
 	-rm -f obj/*.o
 	-rm -f obj-test/*.o

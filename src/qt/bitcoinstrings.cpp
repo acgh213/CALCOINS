@@ -11,9 +11,9 @@ QT_TRANSLATE_NOOP("bitcoin-core", ""
 " %s\n"
 "It is recommended you use the following random password:\n"
 <<<<<<< HEAD
-"rpcuser=calcoinrpc\n"
+"rpcuser=calcoinsrpc\n"
 =======
-"rpcuser=calcoinrpc\n"
+"rpcuser=calcoinsrpc\n"
 >>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
 "rpcpassword=%s\n"
 "(you do not need to remember this password)\n"
@@ -128,15 +128,15 @@ QT_TRANSLATE_NOOP("bitcoin-core", "Set database cache size in megabytes (default
 QT_TRANSLATE_NOOP("bitcoin-core", "Set database disk log size in megabytes (default: 100)"),
 QT_TRANSLATE_NOOP("bitcoin-core", "Set key pool size to <n> (default: 100)"),
 <<<<<<< HEAD
-QT_TRANSLATE_NOOP("bitcoin-core", "Specify configuration file (default: calcoin.conf)"),
+QT_TRANSLATE_NOOP("bitcoin-core", "Specify configuration file (default: calcoins.conf)"),
 QT_TRANSLATE_NOOP("bitcoin-core", "Specify connection timeout (in milliseconds)"),
 QT_TRANSLATE_NOOP("bitcoin-core", "Specify data directory"),
-QT_TRANSLATE_NOOP("bitcoin-core", "Specify pid file (default: calcoin.pid)"),
+QT_TRANSLATE_NOOP("bitcoin-core", "Specify pid file (default: calcoins.pid)"),
 =======
-QT_TRANSLATE_NOOP("bitcoin-core", "Specify configuration file (default: calcoin.conf)"),
+QT_TRANSLATE_NOOP("bitcoin-core", "Specify configuration file (default: calcoins.conf)"),
 QT_TRANSLATE_NOOP("bitcoin-core", "Specify connection timeout (in milliseconds)"),
 QT_TRANSLATE_NOOP("bitcoin-core", "Specify data directory"),
-QT_TRANSLATE_NOOP("bitcoin-core", "Specify pid file (default: calcoin.pid)"),
+QT_TRANSLATE_NOOP("bitcoin-core", "Specify pid file (default: calcoins.pid)"),
 >>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
 QT_TRANSLATE_NOOP("bitcoin-core", "Specify your own public address"),
 QT_TRANSLATE_NOOP("bitcoin-core", "This help message"),

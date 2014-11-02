@@ -99,9 +99,9 @@ void AskPassphraseDialog::accept()
         }
         QMessageBox::StandardButton retval = QMessageBox::question(this, tr("Confirm wallet encryption"),
 <<<<<<< HEAD
-                 tr("WARNING: If you encrypt your wallet and lose your passphrase, you will <b>LOSE ALL OF YOUR calcoinS</b>!\nAre you sure you wish to encrypt your wallet?"),
+                 tr("WARNING: If you encrypt your wallet and lose your passphrase, you will <b>LOSE ALL OF YOUR calcoinsS</b>!\nAre you sure you wish to encrypt your wallet?"),
 =======
-                 tr("WARNING: If you encrypt your wallet and lose your passphrase, you will <b>LOSE ALL OF YOUR calcoinS</b>!\nAre you sure you wish to encrypt your wallet?"),
+                 tr("WARNING: If you encrypt your wallet and lose your passphrase, you will <b>LOSE ALL OF YOUR calcoinsS</b>!\nAre you sure you wish to encrypt your wallet?"),
 >>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
                  QMessageBox::Yes|QMessageBox::Cancel,
                  QMessageBox::Cancel);
@@ -113,9 +113,9 @@ void AskPassphraseDialog::accept()
                 {
                     QMessageBox::warning(this, tr("Wallet encrypted"),
 <<<<<<< HEAD
-                                         tr("CalCoins will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your calcoin from being stolen by malware infecting your computer."));
+                                         tr("CalCoins will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your calcoins from being stolen by malware infecting your computer."));
 =======
-                                         tr("CalCoins will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your calcoin from being stolen by malware infecting your computer."));
+                                         tr("CalCoins will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your calcoins from being stolen by malware infecting your computer."));
 >>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
                     QApplication::quit();
                 }

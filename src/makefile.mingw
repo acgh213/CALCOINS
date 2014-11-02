@@ -64,9 +64,9 @@ OBJS= \
 
 
 <<<<<<< HEAD
-all: calcoin.exe
+all: calcoins.exe
 =======
-all: calcoin.exe
+all: calcoins.exe
 >>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
 
 obj/scrypt.o: scrypt.c
@@ -76,9 +76,9 @@ obj/%.o: %.cpp $(HEADERS)
 	g++ -c $(CFLAGS) -o $@ $<
 
 <<<<<<< HEAD
-calcoin.exe: $(OBJS:obj/%=obj/%)
+calcoins.exe: $(OBJS:obj/%=obj/%)
 =======
-calcoin.exe: $(OBJS:obj/%=obj/%)
+calcoins.exe: $(OBJS:obj/%=obj/%)
 >>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
 	g++ $(CFLAGS) -o $@ $(LIBPATHS) $^ $(LIBS)
 
@@ -88,17 +88,17 @@ obj-test/%.o: test/%.cpp $(HEADERS)
 	g++ -c $(TESTDEFS) $(CFLAGS) -o $@ $<
 
 <<<<<<< HEAD
-test_calcoin.exe: $(TESTOBJS) $(filter-out obj/init.o,$(OBJS:obj/%=obj/%))
+test_calcoins.exe: $(TESTOBJS) $(filter-out obj/init.o,$(OBJS:obj/%=obj/%))
 	g++ $(CFLAGS) -o $@ $(LIBPATHS) $^ -lboost_unit_test_framework $(LIBS)
 
 clean:
-	-del /Q calcoin test_calcoins
+	-del /Q calcoins test_calcoins
 =======
-test_calcoin.exe: $(TESTOBJS) $(filter-out obj/init.o,$(OBJS:obj/%=obj/%))
+test_calcoins.exe: $(TESTOBJS) $(filter-out obj/init.o,$(OBJS:obj/%=obj/%))
 	g++ $(CFLAGS) -o $@ $(LIBPATHS) $^ -lboost_unit_test_framework $(LIBS)
 
 clean:
-	-del /Q calcoin test_foocoin
+	-del /Q calcoins test_foocoin
 >>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
 	-del /Q obj\*
 	-del /Q obj-test\*

@@ -4,9 +4,9 @@
 # file license.txt or http://www.opensource.org/licenses/mit-license.php.
 
 <<<<<<< HEAD
-# Mac OS X makefile for calcoin
+# Mac OS X makefile for calcoins
 =======
-# Mac OS X makefile for calcoin
+# Mac OS X makefile for calcoins
 >>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
 # Originally by Laszlo Hanyecz (solar@heliacal.net)
 
@@ -31,9 +31,9 @@ TESTDEFS = -DTEST_DATA_DIR=$(abspath test/data)
 
 ifdef STATIC
 <<<<<<< HEAD
-# Build STATIC if you are redistributing the calcoin binary
+# Build STATIC if you are redistributing the calcoins binary
 =======
-# Build STATIC if you are redistributing the calcoin binary
+# Build STATIC if you are redistributing the calcoins binary
 >>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
 TESTLIBS += \
  $(DEPSDIR)/lib/libboost_unit_test_framework-mt.a
@@ -112,9 +112,9 @@ endif
 endif
 
 <<<<<<< HEAD
-all: calcoin
+all: calcoins
 =======
-all: calcoin
+all: calcoins
 >>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
 
 # auto-generated dependencies:
@@ -141,9 +141,9 @@ obj/%.o: %.cpp
 	  rm -f $(@:%.o=%.d)
 
 <<<<<<< HEAD
-calcoin: $(OBJS:obj/%=obj/%)
+calcoins: $(OBJS:obj/%=obj/%)
 =======
-calcoin: $(OBJS:obj/%=obj/%)
+calcoins: $(OBJS:obj/%=obj/%)
 >>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
 	$(CXX) $(CFLAGS) -o $@ $(LIBPATHS) $^ $(LIBS)
 
@@ -157,17 +157,17 @@ obj-test/%.o: test/%.cpp
 	  rm -f $(@:%.o=%.d)
 
 <<<<<<< HEAD
-test_calcoin: $(TESTOBJS) $(filter-out obj/init.o,$(OBJS:obj/%=obj/%))
+test_calcoins: $(TESTOBJS) $(filter-out obj/init.o,$(OBJS:obj/%=obj/%))
 	$(CXX) $(CFLAGS) -o $@ $(LIBPATHS) $^ $(LIBS) $(TESTLIBS)
 
 clean:
-	-rm -f calcoin test_calcoins
+	-rm -f calcoins test_calcoins
 =======
-test_calcoin: $(TESTOBJS) $(filter-out obj/init.o,$(OBJS:obj/%=obj/%))
+test_calcoins: $(TESTOBJS) $(filter-out obj/init.o,$(OBJS:obj/%=obj/%))
 	$(CXX) $(CFLAGS) -o $@ $(LIBPATHS) $^ $(LIBS) $(TESTLIBS)
 
 clean:
-	-rm -f calcoin test_foocoin
+	-rm -f calcoins test_foocoin
 >>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
 	-rm -f obj/*.o
 	-rm -f obj-test/*.o

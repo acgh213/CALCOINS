@@ -123,7 +123,7 @@ OBJS= \
 <<<<<<< HEAD
 all: calcoind
 =======
-all: foocoind
+all: calcoind
 >>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
 
 # auto-generated dependencies:
@@ -148,7 +148,7 @@ obj/%.o: %.cpp
 <<<<<<< HEAD
 calcoind: $(OBJS:obj/%=obj/%)
 =======
-foocoind: $(OBJS:obj/%=obj/%)
+calcoind: $(OBJS:obj/%=obj/%)
 >>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
 	$(CXX) $(xCXXFLAGS) -o $@ $^ $(xLDFLAGS) $(LIBS)
 
@@ -168,11 +168,11 @@ test_calcoind: $(TESTOBJS) $(filter-out obj/init.o,$(OBJS:obj/%=obj/%))
 clean:
 	-rm -f calcoind test_calcoinsd
 =======
-test_foocoind: $(TESTOBJS) $(filter-out obj/init.o,$(OBJS:obj/%=obj/%))
+test_calcoind: $(TESTOBJS) $(filter-out obj/init.o,$(OBJS:obj/%=obj/%))
 	$(CXX) $(xCXXFLAGS) -o $@ $(LIBPATHS) $^ -Wl,-B$(LMODE) -lboost_unit_test_framework $(xLDFLAGS) $(LIBS)
 
 clean:
-	-rm -f foocoind test_foocoind
+	-rm -f calcoind test_foocoind
 >>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
 	-rm -f obj/*.o
 	-rm -f obj-test/*.o

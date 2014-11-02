@@ -88,7 +88,7 @@ void ipcInit()
 <<<<<<< HEAD
         // Make sure we don't lose any calcoin: URIs
 =======
-        // Make sure we don't lose any foocoin: URIs
+        // Make sure we don't lose any calcoin: URIs
 >>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
         for (int i = 0; i < 2; i++)
         {

@@ -3,7 +3,11 @@
 # Distributed under the MIT/X11 software license, see the accompanying
 # file license.txt or http://www.opensource.org/licenses/mit-license.php.
 
-# Mac OS X makefile for calcoin
+<<<<<<< HEAD
+# Mac OS X makefile for calcoins
+=======
+# Mac OS X makefile for foocoin
+>>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
 # Originally by Laszlo Hanyecz (solar@heliacal.net)
 
 CXX=llvm-g++
@@ -26,7 +30,11 @@ LIBS= -dead_strip
 TESTDEFS = -DTEST_DATA_DIR=$(abspath test/data)
 
 ifdef STATIC
-# Build STATIC if you are redistributing the calcoin binary
+<<<<<<< HEAD
+# Build STATIC if you are redistributing the calcoins binary
+=======
+# Build STATIC if you are redistributing the foocoin binary
+>>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
 TESTLIBS += \
  $(DEPSDIR)/lib/libboost_unit_test_framework-mt.a
 LIBS += \
@@ -103,7 +111,11 @@ else
 endif
 endif
 
-all: calcoin
+<<<<<<< HEAD
+all: calcoins
+=======
+all: foocoin
+>>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
 
 # auto-generated dependencies:
 -include obj/*.P
@@ -128,7 +140,11 @@ obj/%.o: %.cpp
 	      -e '/^$$/ d' -e 's/$$/ :/' < $(@:%.o=%.d) >> $(@:%.o=%.P); \
 	  rm -f $(@:%.o=%.d)
 
-calcoin: $(OBJS:obj/%=obj/%)
+<<<<<<< HEAD
+calcoins: $(OBJS:obj/%=obj/%)
+=======
+foocoin: $(OBJS:obj/%=obj/%)
+>>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
 	$(CXX) $(CFLAGS) -o $@ $(LIBPATHS) $^ $(LIBS)
 
 TESTOBJS := $(patsubst test/%.cpp,obj-test/%.o,$(wildcard test/*.cpp))
@@ -140,11 +156,19 @@ obj-test/%.o: test/%.cpp
 	      -e '/^$$/ d' -e 's/$$/ :/' < $(@:%.o=%.d) >> $(@:%.o=%.P); \
 	  rm -f $(@:%.o=%.d)
 
-test_calcoin: $(TESTOBJS) $(filter-out obj/init.o,$(OBJS:obj/%=obj/%))
+<<<<<<< HEAD
+test_calcoins: $(TESTOBJS) $(filter-out obj/init.o,$(OBJS:obj/%=obj/%))
 	$(CXX) $(CFLAGS) -o $@ $(LIBPATHS) $^ $(LIBS) $(TESTLIBS)
 
 clean:
-	-rm -f calcoin test_calcoin
+	-rm -f calcoins test_calcoins
+=======
+test_foocoin: $(TESTOBJS) $(filter-out obj/init.o,$(OBJS:obj/%=obj/%))
+	$(CXX) $(CFLAGS) -o $@ $(LIBPATHS) $^ $(LIBS) $(TESTLIBS)
+
+clean:
+	-rm -f foocoin test_foocoin
+>>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
 	-rm -f obj/*.o
 	-rm -f obj-test/*.o
 	-rm -f obj/*.P
