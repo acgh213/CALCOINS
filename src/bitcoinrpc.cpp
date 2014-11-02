@@ -284,10 +284,10 @@ Value stop(const Array& params, bool fHelp)
     if (fHelp || params.size() != 0)
         throw runtime_error(
             "stop\n"
-            "Stop FooCoin server.");
+            "Stop CalCoins server.");
     // Shutdown will take long enough that the response should get back
     StartShutdown();
-    return "FooCoin server has now stopped running!";
+    return "CalCoins server has now stopped running!";
 }
 
 
@@ -457,7 +457,7 @@ Value getnewaddress(const Array& params, bool fHelp)
     if (fHelp || params.size() > 1)
         throw runtime_error(
             "getnewaddress [account]\n"
-            "Returns a new FooCoin address for receiving payments.  "
+            "Returns a new CalCoins address for receiving payments.  "
             "If [account] is specified (recommended), it is added to the address book "
             "so payments received with the address will be credited to [account].");
 
@@ -524,7 +524,7 @@ Value getaccountaddress(const Array& params, bool fHelp)
     if (fHelp || params.size() != 1)
         throw runtime_error(
             "getaccountaddress <account>\n"
-            "Returns the current FooCoin address for receiving payments to this account.");
+            "Returns the current CalCoins address for receiving payments to this account.");
 
     // Parse the account first so we don't generate a key if there's an error
     string strAccount = AccountFromValue(params[0]);
@@ -551,7 +551,7 @@ Value setaccount(const Array& params, bool fHelp)
 
     CBitcoinAddress address(params[0].get_str());
     if (!address.IsValid())
-        throw JSONRPCError(-5, "Invalid FooCoin address");
+        throw JSONRPCError(-5, "Invalid CalCoins address");
 
 
     string strAccount;
@@ -585,7 +585,7 @@ Value getaccount(const Array& params, bool fHelp)
 
     CBitcoinAddress address(params[0].get_str());
     if (!address.IsValid())
-        throw JSONRPCError(-5, "Invalid FooCoin address");
+        throw JSONRPCError(-5, "Invalid CalCoins address");
 
     string strAccount;
     map<CTxDestination, string>::iterator mi = pwalletMain->mapAddressBook.find(address.Get());
@@ -662,7 +662,7 @@ Value sendtoaddress(const Array& params, bool fHelp)
 
     CBitcoinAddress address(params[0].get_str());
     if (!address.IsValid())
-        throw JSONRPCError(-5, "Invalid FooCoin address");
+        throw JSONRPCError(-5, "Invalid CalCoins address");
 
     // Amount
     int64 nAmount = AmountFromValue(params[1]);
@@ -776,11 +776,11 @@ Value getreceivedbyaddress(const Array& params, bool fHelp)
             "Returns the total amount received by <calcoin address> in transactions with at least [minconf] confirmations.");
 >>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
 
-    // FooCoin address
+    // CalCoins address
     CBitcoinAddress address = CBitcoinAddress(params[0].get_str());
     CScript scriptPubKey;
     if (!address.IsValid())
-        throw JSONRPCError(-5, "Invalid FooCoin address");
+        throw JSONRPCError(-5, "Invalid CalCoins address");
     scriptPubKey.SetDestination(address.Get());
     if (!IsMine(*pwalletMain,scriptPubKey))
         return (double)0.0;
@@ -1005,7 +1005,7 @@ Value sendfrom(const Array& params, bool fHelp)
     string strAccount = AccountFromValue(params[0]);
     CBitcoinAddress address(params[1].get_str());
     if (!address.IsValid())
-        throw JSONRPCError(-5, "Invalid FooCoin address");
+        throw JSONRPCError(-5, "Invalid CalCoins address");
     int64 nAmount = AmountFromValue(params[2]);
     int nMinDepth = 1;
     if (params.size() > 3)
@@ -1061,7 +1061,7 @@ Value sendmany(const Array& params, bool fHelp)
     {
         CBitcoinAddress address(s.name_);
         if (!address.IsValid())
-            throw JSONRPCError(-5, string("Invalid FooCoin address:")+s.name_);
+            throw JSONRPCError(-5, string("Invalid CalCoins address:")+s.name_);
 
         if (setAddress.count(address))
             throw JSONRPCError(-8, string("Invalid parameter, duplicated address: ")+s.name_);
@@ -1104,7 +1104,7 @@ Value addmultisigaddress(const Array& params, bool fHelp)
     {
         string msg = "addmultisigaddress <nrequired> <'[\"key\",\"key\"]'> [account]\n"
             "Add a nrequired-to-sign multisignature address to the wallet\"\n"
-            "each key is a FooCoin address or hex-encoded public key\n"
+            "each key is a CalCoins address or hex-encoded public key\n"
             "If [account] is specified, assign address to [account].";
         throw runtime_error(msg);
     }
@@ -1128,7 +1128,7 @@ Value addmultisigaddress(const Array& params, bool fHelp)
     {
         const std::string& ks = keys[i].get_str();
 
-        // Case 1: FooCoin address and we have full public key:
+        // Case 1: CalCoins address and we have full public key:
         CBitcoinAddress address(ks);
         if (address.IsValid())
         {
@@ -1820,7 +1820,7 @@ Value encryptwallet(const Array& params, bool fHelp)
     // slack space in .dat files; that is bad if the old data is
     // unencrypted private keys.  So:
     StartShutdown();
-    return "wallet encrypted; FooCoin server stopping, restart to run with encrypted wallet";
+    return "wallet encrypted; CalCoins server stopping, restart to run with encrypted wallet";
 }
 
 class DescribeAddressVisitor : public boost::static_visitor<Object>
@@ -1901,10 +1901,10 @@ Value getworkex(const Array& params, bool fHelp)
         );
 
     if (vNodes.empty())
-        throw JSONRPCError(-9, "FooCoin server is not connected!");
+        throw JSONRPCError(-9, "CalCoins server is not connected!");
 
     if (IsInitialBlockDownload())
-        throw JSONRPCError(-10, "FooCoin server is downloading blocks...");
+        throw JSONRPCError(-10, "CalCoins server is downloading blocks...");
 
     typedef map<uint256, pair<CBlock*, CScript> > mapNewBlock_t;
     static mapNewBlock_t mapNewBlock;
@@ -2033,10 +2033,10 @@ Value getwork(const Array& params, bool fHelp)
             "If [data] is specified, tries to solve the block and returns true if it was successful.");
 
     if (vNodes.empty())
-        throw JSONRPCError(-9, "FooCoin server is not connected!");
+        throw JSONRPCError(-9, "CalCoins server is not connected!");
 
     if (IsInitialBlockDownload())
-        throw JSONRPCError(-10, "FooCoin server is downloading blocks...");
+        throw JSONRPCError(-10, "CalCoins server is downloading blocks...");
 
     typedef map<uint256, pair<CBlock*, CScript> > mapNewBlock_t;
     static mapNewBlock_t mapNewBlock;    // FIXME: thread safety
@@ -2165,10 +2165,10 @@ Value getblocktemplate(const Array& params, bool fHelp)
     if (strMode == "template")
     {
         if (vNodes.empty())
-            throw JSONRPCError(-9, "FooCoin server is not connected!");
+            throw JSONRPCError(-9, "CalCoins server is not connected!");
 
         if (IsInitialBlockDownload())
-            throw JSONRPCError(-10, "FooCoin server is downloading blocks...");
+            throw JSONRPCError(-10, "CalCoins server is downloading blocks...");
 
         static CReserveKey reservekey(pwalletMain);
 
@@ -2612,7 +2612,7 @@ bool HTTPAuthorized(map<string, string>& mapHeaders)
 }
 
 //
-// JSON-RPC protocol.  FooCoin speaks version 1.0 for maximum compatibility,
+// JSON-RPC protocol.  CalCoins speaks version 1.0 for maximum compatibility,
 // but uses JSON-RPC 1.1/2.0 standards for parts of the 1.0 standard that were
 // unspecified (HTTP errors and contents of 'error').
 //

@@ -1,5 +1,5 @@
 <<<<<<< HEAD
-FooCoin (FOO)
+CalCoins (FOO)
 ===========
 
 [![Build Status](https://travis-ci.org/RazorLove/calcoin.png?branch=master)](https://travis-ci.org/RazorLove/foocoin)

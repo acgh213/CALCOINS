@@ -1,17 +1,17 @@
-Building FooCoin
+Building CalCoins
 
 <<<<<<< HEAD
 See doc/readme-qt.rst for instructions on building calcoin-qt,
 the intended-for-end-users, nice-graphical-interface, reference
-implementation of FooCoin.
+implementation of CalCoins.
 
 See doc/build-*.txt for instructions on building calcoin,
 =======
 See doc/readme-qt.rst for instructions on building calcoin-qt,
 the intended-for-end-users, nice-graphical-interface, reference
-implementation of FooCoin.
+implementation of CalCoins.
 
 See doc/build-*.txt for instructions on building calcoin,
 >>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
 the intended-for-services, no-graphical-interface, reference
-implementation of FooCoin.
+implementation of CalCoins.

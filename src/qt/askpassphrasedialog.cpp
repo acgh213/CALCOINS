@@ -113,9 +113,9 @@ void AskPassphraseDialog::accept()
                 {
                     QMessageBox::warning(this, tr("Wallet encrypted"),
 <<<<<<< HEAD
-                                         tr("FooCoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your calcoin from being stolen by malware infecting your computer."));
+                                         tr("CalCoins will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your calcoin from being stolen by malware infecting your computer."));
 =======
-                                         tr("FooCoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your calcoin from being stolen by malware infecting your computer."));
+                                         tr("CalCoins will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your calcoin from being stolen by malware infecting your computer."));
 >>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
                     QApplication::quit();
                 }

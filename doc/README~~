@@ -21,6 +21,7 @@ with each other, with the help of a P2P network to check for double-spending.
 
 Setup
 -----
+<<<<<<< HEAD
 You need the Qt4 run-time libraries to run calcoin-qt. On Debian or Ubuntu:
   sudo apt-get install libqtgui4
 
@@ -29,6 +30,16 @@ Unpack the files into a directory and run:
  bin/32/calcoin (headless, 32-bit)
  bin/64/calcoin-qt (GUI, 64-bit)
  bin/64/calcoin (headless, 64-bit)
+=======
+You need the Qt4 run-time libraries to run calcoin-qt. On Debian or Ubuntu:
+  sudo apt-get install libqtgui4
+
+Unpack the files into a directory and run:
+ bin/32/calcoin-qt (GUI, 32-bit)
+ bin/32/calcoin (headless, 32-bit)
+ bin/64/calcoin-qt (GUI, 64-bit)
+ bin/64/calcoin (headless, 64-bit)
+>>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
 
 
 See the documentation at the bitcoin wiki:

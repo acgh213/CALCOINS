@@ -109,7 +109,7 @@ static std::string Translate(const char* psz)
 static void handleRunawayException(std::exception *e)
 {
     PrintExceptionContinue(e, "Runaway exception");
-    QMessageBox::critical(0, "Runaway exception", BitcoinGUI::tr("A fatal error occured. FooCoin can no longer continue safely and will quit.") + QString("\n\n") + QString::fromStdString(strMiscWarning));
+    QMessageBox::critical(0, "Runaway exception", BitcoinGUI::tr("A fatal error occured. CalCoins can no longer continue safely and will quit.") + QString("\n\n") + QString::fromStdString(strMiscWarning));
     exit(1);
 }
 
@@ -124,7 +124,7 @@ int main(int argc, char *argv[])
 <<<<<<< HEAD
         if (boost::algorithm::istarts_with(argv[i], "calcoin:"))
 =======
-        if (boost::algorithm::istarts_with(argv[i], "foocoin:"))
+        if (boost::algorithm::istarts_with(argv[i], "calcoin:"))
 >>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
         {
             const char *strURI = argv[i];
@@ -173,7 +173,7 @@ int main(int argc, char *argv[])
 
     // Application identification (must be set before OptionsModel is initialized,
     // as it is used to locate QSettings)
-    app.setOrganizationName("FooCoin");
+    app.setOrganizationName("CalCoins");
     app.setOrganizationDomain("we-have-no-domain-yet.nex");
     if(GetBoolArg("-testnet")) // Separate UI settings for testnet
 <<<<<<< HEAD
@@ -181,9 +181,9 @@ int main(int argc, char *argv[])
     else
         app.setApplicationName("calcoin-qt");
 =======
-        app.setApplicationName("foocoin-qt-testnet");
+        app.setApplicationName("calcoin-qt-testnet");
     else
-        app.setApplicationName("foocoin-qt");
+        app.setApplicationName("calcoin-qt");
 >>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
 
     // ... then GUI settings:
@@ -291,7 +291,7 @@ int main(int argc, char *argv[])
 <<<<<<< HEAD
                     if (boost::algorithm::istarts_with(argv[i], "calcoin:"))
 =======
-                    if (boost::algorithm::istarts_with(argv[i], "foocoin:"))
+                    if (boost::algorithm::istarts_with(argv[i], "calcoin:"))
 >>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
                     {
                         const char *strURI = argv[i];

@@ -137,10 +137,17 @@ bool AppInit(int argc, char* argv[])
             // First part of help message is specific to FooCoin server / RPC client
             std::string strUsage = _("FooCoin version") + " " + FormatFullVersion() + "\n\n" +
                 _("Usage:") + "\n" +
+<<<<<<< HEAD
                   "  calcoin [options]                     " + "\n" +
-                  "  calcoin [options] <command> [params]  " + _("Send command to -server or calcoin") + "\n" +
+                  "  calcoin [options] <command> [params]  " + _("Send command to -server or calcoins") + "\n" +
                   "  calcoin [options] help                " + _("List commands") + "\n" +
                   "  calcoin [options] help <command>      " + _("Get help for a command") + "\n";
+=======
+                  "  calcoin [options]                     " + "\n" +
+                  "  calcoin [options] <command> [params]  " + _("Send command to -server or foocoin") + "\n" +
+                  "  calcoin [options] help                " + _("List commands") + "\n" +
+                  "  calcoin [options] help <command>      " + _("Get help for a command") + "\n";
+>>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
 
             strUsage += "\n" + HelpMessage();
 
@@ -150,7 +157,11 @@ bool AppInit(int argc, char* argv[])
 
         // Command-line RPC
         for (int i = 1; i < argc; i++)
+<<<<<<< HEAD
             if (!IsSwitchChar(argv[i][0]) && !boost::algorithm::istarts_with(argv[i], "calcoin:"))
+=======
+            if (!IsSwitchChar(argv[i][0]) && !boost::algorithm::istarts_with(argv[i], "calcoin:"))
+>>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
                 fCommandLine = true;
 
         if (fCommandLine)
@@ -220,8 +231,13 @@ extern double GetDifficulty(const CBlockIndex* blockindex = NULL);
 std::string HelpMessage()
 {
     string strUsage = _("Options:") + "\n" +
+<<<<<<< HEAD
         "  -conf=<file>           " + _("Specify configuration file (default: calcoin.conf)") + "\n" +
         "  -pid=<file>            " + _("Specify pid file (default: calcoin.pid)") + "\n" +
+=======
+        "  -conf=<file>           " + _("Specify configuration file (default: calcoin.conf)") + "\n" +
+        "  -pid=<file>            " + _("Specify pid file (default: calcoin.pid)") + "\n" +
+>>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
         "  -gen                   " + _("Generate coins") + "\n" +
         "  -gen=0                 " + _("Don't generate coins") + "\n" +
         "  -datadir=<dir>         " + _("Specify data directory") + "\n" +
@@ -423,7 +439,11 @@ bool AppInit2()
 
     // ********************************************************* Step 4: application initialization: dir lock, daemonize, pidfile, debug log
 
+<<<<<<< HEAD
     // Make sure only a single calcoin process is using the data directory.
+=======
+    // Make sure only a single calcoin process is using the data directory.
+>>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
     boost::filesystem::path pathLockFile = GetDataDir() / ".lock";
     FILE* file = fopen(pathLockFile.string().c_str(), "a"); // empty lock file; created if it doesn't exist.
     if (file) fclose(file);
@@ -582,7 +602,11 @@ bool AppInit2()
         strErrors << _("Error loading blkindex.dat") << "\n";
 
     // as LoadBlockIndex can take several minutes, it's possible the user
+<<<<<<< HEAD
     // requested to kill calcoin-qt during the last operation. If so, exit.
+=======
+    // requested to kill calcoin-qt during the last operation. If so, exit.
+>>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
     // As the program has not fully started yet, Shutdown() is possibly overkill.
     if (fRequestShutdown)
     {

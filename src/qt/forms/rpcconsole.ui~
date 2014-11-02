@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>FooCoin - Debug window</string>
+   <string>CalCoins - Debug window</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_2">
    <item>
@@ -322,7 +322,7 @@
        <item row="15" column="0">
         <widget class="QPushButton" name="openDebugLogfileButton">
          <property name="toolTip">
-          <string>Open the FooCoin debug logfile from the current data directory. This can take a few seconds for large logfiles.</string>
+          <string>Open the CalCoins debug logfile from the current data directory. This can take a few seconds for large logfiles.</string>
          </property>
          <property name="text">
           <string>&amp;Open</string>
@@ -351,7 +351,7 @@
 <<<<<<< HEAD
           <string>Show the calcoin-qt help message to get a list with possible command-line options.</string>
 =======
-          <string>Show the foocoin-qt help message to get a list with possible command-line options.</string>
+          <string>Show the calcoin-qt help message to get a list with possible command-line options.</string>
 >>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
          </property>
          <property name="text">

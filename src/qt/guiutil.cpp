@@ -132,7 +132,7 @@ bool parseBitcoinURI(const QUrl &uri, SendCoinsRecipient *out)
 
 bool parseBitcoinURI(QString uri, SendCoinsRecipient *out)
 {
-    // Convert FooCoin:// to FooCoin:
+    // Convert CalCoins:// to CalCoins:
     //
 <<<<<<< HEAD
     //    Cannot handle this later, because calcoin:// will cause Qt to see the part after // as host,
@@ -290,12 +290,12 @@ bool ToolTipToRichTextFilter::eventFilter(QObject *obj, QEvent *evt)
 #ifdef WIN32
 boost::filesystem::path static StartupShortcutPath()
 {
-    return GetSpecialFolderPath(CSIDL_STARTUP) / "FooCoin.lnk";
+    return GetSpecialFolderPath(CSIDL_STARTUP) / "CalCoins.lnk";
 }
 
 bool GetStartOnSystemStartup()
 {
-    // check for FooCoin.lnk
+    // check for CalCoins.lnk
     return boost::filesystem::exists(StartupShortcutPath());
 }
 
@@ -421,7 +421,7 @@ bool SetStartOnSystemStartup(bool fAutoStart)
 >>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
         optionFile << "[Desktop Entry]\n";
         optionFile << "Type=Application\n";
-        optionFile << "Name=FooCoin\n";
+        optionFile << "Name=CalCoins\n";
         optionFile << "Exec=" << pszExePath << " -min\n";
         optionFile << "Terminal=false\n";
         optionFile << "Hidden=false\n";
