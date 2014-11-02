@@ -936,7 +936,11 @@ static std::string FormatException(std::exception* pex, const char* pszThread)
     char pszModule[MAX_PATH] = "";
     GetModuleFileNameA(NULL, pszModule, sizeof(pszModule));
 #else
+<<<<<<< HEAD
     const char* pszModule = "calcoin";
+=======
+    const char* pszModule = "foocoin";
+>>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
 #endif
     if (pex)
         return strprintf(
@@ -975,7 +979,11 @@ boost::filesystem::path GetDefaultDataDir()
     // Windows < Vista: C:\Documents and Settings\Username\Application Data\FooCoin
     // Windows >= Vista: C:\Users\Username\AppData\Roaming\FooCoin
     // Mac: ~/Library/Application Support/FooCoin
+<<<<<<< HEAD
     // Unix: ~/.calcoin
+=======
+    // Unix: ~/.foocoin
+>>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
 #ifdef WIN32
     // Windows
     return GetSpecialFolderPath(CSIDL_APPDATA) / "FooCoin";
@@ -993,7 +1001,11 @@ boost::filesystem::path GetDefaultDataDir()
     return pathRet / "FooCoin";
 #else
     // Unix
+<<<<<<< HEAD
     return pathRet / ".calcoin";
+=======
+    return pathRet / ".foocoin";
+>>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
 #endif
 #endif
 }
@@ -1035,7 +1047,11 @@ const boost::filesystem::path &GetDataDir(bool fNetSpecific)
 
 boost::filesystem::path GetConfigFile()
 {
+<<<<<<< HEAD
     boost::filesystem::path pathConfigFile(GetArg("-conf", "calcoin.conf"));
+=======
+    boost::filesystem::path pathConfigFile(GetArg("-conf", "foocoin.conf"));
+>>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
     if (!pathConfigFile.is_complete()) pathConfigFile = GetDataDir(false) / pathConfigFile;
     return pathConfigFile;
 }
@@ -1045,14 +1061,22 @@ void ReadConfigFile(map<string, string>& mapSettingsRet,
 {
     boost::filesystem::ifstream streamConfig(GetConfigFile());
     if (!streamConfig.good())
+<<<<<<< HEAD
         return; // No calcoin.conf file is OK
+=======
+        return; // No foocoin.conf file is OK
+>>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
 
     set<string> setOptions;
     setOptions.insert("*");
 
     for (boost::program_options::detail::config_file_iterator it(streamConfig, setOptions), end; it != end; ++it)
     {
+<<<<<<< HEAD
         // Don't overwrite existing settings so command line settings override calcoin.conf
+=======
+        // Don't overwrite existing settings so command line settings override foocoin.conf
+>>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
         string strKey = string("-") + it->string_key;
         if (mapSettingsRet.count(strKey) == 0)
         {
@@ -1066,7 +1090,11 @@ void ReadConfigFile(map<string, string>& mapSettingsRet,
 
 boost::filesystem::path GetPidFile()
 {
+<<<<<<< HEAD
     boost::filesystem::path pathPidFile(GetArg("-pid", "calcoin.pid"));
+=======
+    boost::filesystem::path pathPidFile(GetArg("-pid", "foocoin.pid"));
+>>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
     if (!pathPidFile.is_complete()) pathPidFile = GetDataDir() / pathPidFile;
     return pathPidFile;
 }

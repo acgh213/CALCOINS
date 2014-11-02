@@ -348,7 +348,11 @@
        <item row="17" column="0">
         <widget class="QPushButton" name="showCLOptionsButton">
          <property name="toolTip">
+<<<<<<< HEAD
           <string>Show the calcoin-qt help message to get a list with possible command-line options.</string>
+=======
+          <string>Show the foocoin-qt help message to get a list with possible command-line options.</string>
+>>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
          </property>
          <property name="text">
           <string>&amp;Show</string>
