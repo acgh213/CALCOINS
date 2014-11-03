@@ -111,11 +111,7 @@ else
 endif
 endif
 
-<<<<<<< HEAD
 all: calcoins
-=======
-all: calcoins
->>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
 
 # auto-generated dependencies:
 -include obj/*.P
@@ -140,11 +136,8 @@ obj/%.o: %.cpp
 	      -e '/^$$/ d' -e 's/$$/ :/' < $(@:%.o=%.d) >> $(@:%.o=%.P); \
 	  rm -f $(@:%.o=%.d)
 
-<<<<<<< HEAD
+
 calcoins: $(OBJS:obj/%=obj/%)
-=======
-calcoins: $(OBJS:obj/%=obj/%)
->>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
 	$(CXX) $(CFLAGS) -o $@ $(LIBPATHS) $^ $(LIBS)
 
 TESTOBJS := $(patsubst test/%.cpp,obj-test/%.o,$(wildcard test/*.cpp))
@@ -156,19 +149,11 @@ obj-test/%.o: test/%.cpp
 	      -e '/^$$/ d' -e 's/$$/ :/' < $(@:%.o=%.d) >> $(@:%.o=%.P); \
 	  rm -f $(@:%.o=%.d)
 
-<<<<<<< HEAD
 test_calcoins: $(TESTOBJS) $(filter-out obj/init.o,$(OBJS:obj/%=obj/%))
 	$(CXX) $(CFLAGS) -o $@ $(LIBPATHS) $^ $(LIBS) $(TESTLIBS)
 
 clean:
 	-rm -f calcoins test_calcoins
-=======
-test_calcoins: $(TESTOBJS) $(filter-out obj/init.o,$(OBJS:obj/%=obj/%))
-	$(CXX) $(CFLAGS) -o $@ $(LIBPATHS) $^ $(LIBS) $(TESTLIBS)
-
-clean:
-	-rm -f calcoins test_foocoin
->>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
 	-rm -f obj/*.o
 	-rm -f obj-test/*.o
 	-rm -f obj/*.P

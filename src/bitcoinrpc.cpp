@@ -542,11 +542,7 @@ Value setaccount(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() < 1 || params.size() > 2)
         throw runtime_error(
-<<<<<<< HEAD
             "setaccount <calcoins address> <account>\n"
-=======
-            "setaccount <calcoins address> <account>\n"
->>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
             "Sets the account associated with the given address.");
 
     CBitcoinAddress address(params[0].get_str());
@@ -576,11 +572,7 @@ Value getaccount(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() != 1)
         throw runtime_error(
-<<<<<<< HEAD
             "getaccount <calcoins address>\n"
-=======
-            "getaccount <calcoins address>\n"
->>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
             "Returns the account associated with the given address.");
 
     CBitcoinAddress address(params[0].get_str());
@@ -652,11 +644,7 @@ Value sendtoaddress(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() < 2 || params.size() > 4)
         throw runtime_error(
-<<<<<<< HEAD
             "sendtoaddress <calcoins address> <amount> [comment] [comment-to]\n"
-=======
-            "sendtoaddress <calcoins address> <amount> [comment] [comment-to]\n"
->>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
             "<amount> is a real and is rounded to the nearest 0.00000001"
             + HelpRequiringPassphrase());
 
@@ -688,11 +676,7 @@ Value signmessage(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() != 2)
         throw runtime_error(
-<<<<<<< HEAD
             "signmessage <calcoins address> <message>\n"
-=======
-            "signmessage <calcoins address> <message>\n"
->>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
             "Sign a message with the private key of an address");
 
     EnsureWalletIsUnlocked();
@@ -727,11 +711,7 @@ Value verifymessage(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() != 3)
         throw runtime_error(
-<<<<<<< HEAD
             "verifymessage <calcoins address> <signature> <message>\n"
-=======
-            "verifymessage <calcoins address> <signature> <message>\n"
->>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
             "Verify a signed message");
 
     string strAddress  = params[0].get_str();
@@ -768,13 +748,9 @@ Value getreceivedbyaddress(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() < 1 || params.size() > 2)
         throw runtime_error(
-<<<<<<< HEAD
             "getreceivedbyaddress <calcoins address> [minconf=1]\n"
             "Returns the total amount received by <calcoins address> in transactions with at least [minconf] confirmations.");
-=======
-            "getreceivedbyaddress <calcoins address> [minconf=1]\n"
-            "Returns the total amount received by <calcoins address> in transactions with at least [minconf] confirmations.");
->>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
+
 
     // CalCoins address
     CBitcoinAddress address = CBitcoinAddress(params[0].get_str());
@@ -994,11 +970,8 @@ Value sendfrom(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() < 3 || params.size() > 6)
         throw runtime_error(
-<<<<<<< HEAD
             "sendfrom <fromaccount> <to calcoins address> <amount> [minconf=1] [comment] [comment-to]\n"
-=======
-            "sendfrom <fromaccount> <to calcoins address> <amount> [minconf=1] [comment] [comment-to]\n"
->>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
+
             "<amount> is a real and is rounded to the nearest 0.00000001"
             + HelpRequiringPassphrase());
 
@@ -1862,13 +1835,9 @@ Value validateaddress(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() != 1)
         throw runtime_error(
-<<<<<<< HEAD
             "validateaddress <calcoins address>\n"
             "Return information about <calcoins address>.");
-=======
-            "validateaddress <calcoins address>\n"
-            "Return information about <calcoins address>.");
->>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
+
 
     CBitcoinAddress address(params[0].get_str());
     bool isValid = address.IsValid();
@@ -2444,11 +2413,7 @@ string HTTPPost(const string& strMsg, const map<string,string>& mapRequestHeader
 {
     ostringstream s;
     s << "POST / HTTP/1.1\r\n"
-<<<<<<< HEAD
       << "User-Agent: calcoins-json-rpc/" << FormatFullVersion() << "\r\n"
-=======
-      << "User-Agent: calcoins-json-rpc/" << FormatFullVersion() << "\r\n"
->>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
       << "Host: 127.0.0.1\r\n"
       << "Content-Type: application/json\r\n"
       << "Content-Length: " << strMsg.size() << "\r\n"
@@ -2479,11 +2444,8 @@ static string HTTPReply(int nStatus, const string& strMsg, bool keepalive)
     if (nStatus == 401)
         return strprintf("HTTP/1.0 401 Authorization Required\r\n"
             "Date: %s\r\n"
-<<<<<<< HEAD
             "Server: calcoins-json-rpc/%s\r\n"
-=======
-            "Server: calcoins-json-rpc/%s\r\n"
->>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
+
             "WWW-Authenticate: Basic realm=\"jsonrpc\"\r\n"
             "Content-Type: text/html\r\n"
             "Content-Length: 296\r\n"
@@ -2510,11 +2472,7 @@ static string HTTPReply(int nStatus, const string& strMsg, bool keepalive)
             "Connection: %s\r\n"
             "Content-Length: %d\r\n"
             "Content-Type: application/json\r\n"
-<<<<<<< HEAD
             "Server: calcoins-json-rpc/%s\r\n"
-=======
-            "Server: calcoins-json-rpc/%s\r\n"
->>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
             "\r\n"
             "%s",
         nStatus,
@@ -2890,11 +2848,7 @@ void ThreadRPCServer2(void* parg)
     {
         unsigned char rand_pwd[32];
         RAND_bytes(rand_pwd, 32);
-<<<<<<< HEAD
         string strWhatAmI = "To use calcoins";
-=======
-        string strWhatAmI = "To use calcoins";
->>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
         if (mapArgs.count("-server"))
             strWhatAmI = strprintf(_("To use the %s option"), "\"-server\"");
         else if (mapArgs.count("-daemon"))
@@ -2902,11 +2856,7 @@ void ThreadRPCServer2(void* parg)
         uiInterface.ThreadSafeMessageBox(strprintf(
             _("%s, you must set a rpcpassword in the configuration file:\n %s\n"
               "It is recommended you use the following random password:\n"
-<<<<<<< HEAD
               "rpcuser=calcoinsrpc\n"
-=======
-              "rpcuser=calcoinsrpc\n"
->>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
               "rpcpassword=%s\n"
               "(you do not need to remember this password)\n"
               "If the file does not exist, create it with owner-readable-only file permissions.\n"),

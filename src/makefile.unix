@@ -119,11 +119,7 @@ OBJS= \
     obj/walletdb.o \
     obj/noui.o
 
-<<<<<<< HEAD
-all: calcoind
-=======
-all: calcoind
->>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
+all: calcoinsd
 
 # auto-generated dependencies:
 -include obj/*.P
@@ -144,11 +140,8 @@ obj/%.o: %.cpp
 	      -e '/^$$/ d' -e 's/$$/ :/' < $(@:%.o=%.d) >> $(@:%.o=%.P); \
 	  rm -f $(@:%.o=%.d)
 
-<<<<<<< HEAD
 calcoinsd: $(OBJS:obj/%=obj/%)
-=======
-calcoinsd: $(OBJS:obj/%=obj/%)
->>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
+
 	$(CXX) $(xCXXFLAGS) -o $@ $^ $(xLDFLAGS) $(LIBS)
 
 TESTOBJS := $(patsubst test/%.cpp,obj-test/%.o,$(wildcard test/*.cpp))
@@ -160,19 +153,12 @@ obj-test/%.o: test/%.cpp
 	      -e '/^$$/ d' -e 's/$$/ :/' < $(@:%.o=%.d) >> $(@:%.o=%.P); \
 	  rm -f $(@:%.o=%.d)
 
-<<<<<<< HEAD
+
 test_calcoinsd: $(TESTOBJS) $(filter-out obj/init.o,$(OBJS:obj/%=obj/%))
 	$(CXX) $(xCXXFLAGS) -o $@ $(LIBPATHS) $^ -Wl,-B$(LMODE) -lboost_unit_test_framework $(xLDFLAGS) $(LIBS)
 
 clean:
 	-rm -f calcoinsd test_calcoinsd
-=======
-test_calcoinsd: $(TESTOBJS) $(filter-out obj/init.o,$(OBJS:obj/%=obj/%))
-	$(CXX) $(xCXXFLAGS) -o $@ $(LIBPATHS) $^ -Wl,-B$(LMODE) -lboost_unit_test_framework $(xLDFLAGS) $(LIBS)
-
-clean:
-	-rm -f calcoinsd test_foocoind
->>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
 	-rm -f obj/*.o
 	-rm -f obj-test/*.o
 	-rm -f obj/*.P
