@@ -1033,7 +1033,7 @@ const boost::filesystem::path &GetDataDir(bool fNetSpecific)
     return path;
 }
 
-boost::filesystem::path GetConfigFile()
+boost::filesystem::pathGetConfigFile()
 {
 
     boost::filesystem::pathConfigFile(GetArg("-conf", "calcoins.conf"));
@@ -1076,7 +1076,7 @@ void ReadConfigFile(map<string, string>& mapSettingsRet,
     }
 }
 
-boost::filesystem::path GetPidFile()
+boost::filesystem::pathGetPidFile()
 {
 
     boost::filesystem::pathPidFile(GetArg("-pid", "calcoins.pid"));
