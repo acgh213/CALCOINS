@@ -1076,7 +1076,7 @@ void ReadConfigFile(map<string, string>& mapSettingsRet,
     }
 }
 
-boost::filesystem::pathGetPidFile()
+boost::filesystem::pathGetPidFile(GetArg("-pid", "calcoins.pid"))
 {
 
     boost::filesystem::pathPidFile(GetArg("-pid", "calcoins.pid"));
