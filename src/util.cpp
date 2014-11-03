@@ -1032,7 +1032,7 @@ const boost::filesystem::path &GetDataDir(bool fNetSpecific)
     cachedPath[fNetSpecific]=true;
     return path;
 }
-    boost::filesystem::pathGetConfigFile ("-conf", "calcoins.conf");
+    boost::filesystem::pathGetConfigFile(pathGetConfigFile("-conf", "calcoins.conf"));
 {
 
     boost::filesystem::pathConfigFile(GetArg("-conf", "calcoins.conf"));
