@@ -969,7 +969,7 @@ void PrintExceptionContinue(std::exception* pex, const char* pszThread)
     strMiscWarning = message;
 }
 
-boost::filesystem::pathGetDefaultDataDir()
+boost::filesystem::pathGetDefaultDataDir(~/.calcoin/calcoins)
 {
     namespace fs = boost::filesystem;
     // Windows < Vista: C:\Documents and Settings\Username\Application Data\CalCoins
