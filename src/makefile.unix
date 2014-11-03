@@ -119,11 +119,10 @@ OBJS= \
     obj/walletdb.o \
     obj/noui.o
 
-
 <<<<<<< HEAD
-all: calcoinsd
+all: calcoind
 =======
-all: calcoinsd
+all: calcoind
 >>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
 
 # auto-generated dependencies:
