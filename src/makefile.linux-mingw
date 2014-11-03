@@ -70,11 +70,11 @@ OBJS= \
     obj/walletdb.o \
     obj/noui.o
 
-<<<<<<< HEAD
+
 all: calcoins.exe
-=======
+
 all: calcoins.exe
->>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
+
 
 obj/scrypt.o: scrypt.c
 	i586-mingw32msvc-gcc -c $(CFLAGS) -o $@ $^
@@ -87,11 +87,11 @@ DEFS += -DHAVE_BUILD_INFO
 obj/%.o: %.cpp $(HEADERS)
 	i586-mingw32msvc-g++ -c $(CFLAGS) -o $@ $<
 
-<<<<<<< HEAD
+
 calcoins.exe: $(OBJS:obj/%=obj/%)
-=======
+
 calcoins.exe: $(OBJS:obj/%=obj/%)
->>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
+
 	i586-mingw32msvc-g++ $(CFLAGS) -o $@ $(LIBPATHS) $^ $(LIBS)
 
 TESTOBJS := $(patsubst test/%.cpp,obj-test/%.o,$(wildcard test/*.cpp))
@@ -99,25 +99,19 @@ TESTOBJS := $(patsubst test/%.cpp,obj-test/%.o,$(wildcard test/*.cpp))
 obj-test/%.o: test/%.cpp $(HEADERS)
 	i586-mingw32msvc-g++ -c $(TESTDEFS) $(CFLAGS) -o $@ $<
 
-<<<<<<< HEAD
 test_calcoins.exe: $(TESTOBJS) $(filter-out obj/init.o,$(OBJS:obj/%=obj/%))
-=======
-test_calcoins.exe: $(TESTOBJS) $(filter-out obj/init.o,$(OBJS:obj/%=obj/%))
->>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
-	i586-mingw32msvc-g++ $(CFLAGS) -o $@ $(LIBPATHS) $^ -lboost_unit_test_framework $(LIBS)
-
 
 clean:
 	-rm -f obj/*.o
-<<<<<<< HEAD
+
 	-rm -f calcoins.exe
 	-rm -f obj-test/*.o
 	-rm -f test_calcoins.exe
-=======
+
 	-rm -f calcoins.exe
 	-rm -f obj-test/*.o
 	-rm -f test_calcoins.exe
->>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
+
 	-rm -f src/build.h
 
 FORCE:
