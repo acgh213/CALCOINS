@@ -1032,9 +1032,8 @@ const boost::filesystem::path &GetDataDir(bool fNetSpecific)
     cachedPath[fNetSpecific]=true;
     return path;
 }
-
-{
     boost::filesystem::pathGetConfigFile(GetArg("-conf", "calcoins.conf"));
+{
 
     boost::filesystem::pathConfigFile(GetArg("-conf", "calcoins.conf"));
 
@@ -1074,8 +1073,9 @@ void ReadConfigFile(map<string, string>& mapSettingsRet,
         }
         mapMultiSettingsRet[strKey].push_back(it->value[0]);
     }
+}
+    boost::filesystem::pathGetPidFile("-pid", "calcoins.pid");
 {
-    boost::filesystem::pathGetPidFile(GetArg("-pid", "calcoins.pid"));
 
     boost::filesystem::pathPidFile(GetArg("-pid", "calcoins.pid"));
 
