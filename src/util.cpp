@@ -968,7 +968,7 @@ void PrintExceptionContinue(std::exception* pex, const char* pszThread)
     fprintf(stderr, "\n\n************************\n%s\n", message.c_str());
     strMiscWarning = message;
 }
-    boost::filesystem::pathGetDefaultDataDir(~/.calcoins);
+    boost::filesystem::path GetDefaultDataDir()
 {
     namespace fs = boost::filesystem;
     // Windows < Vista: C:\Documents and Settings\Username\Application Data\CalCoins
@@ -1032,9 +1032,9 @@ const boost::filesystem::path &GetDataDir(bool fNetSpecific)
     return path;
 }
 
-    boost::filesystem::pathGetConfigFile("-conf", "calcoins.conf"),
+    boost::filesystem::path GetConfigFile()
 {
-    boost::filesystem::pathConfigFile(GetArg("-conf", "calcoins.conf"));
+    boost::filesystem::path pathConfigFile(GetArg("-conf", "calcoins.conf"));
 
     if (!pathConfigFile.is_complete()) pathConfigFile = GetDataDir(false) / pathConfigFile;
     return pathConfigFile;
@@ -1071,9 +1071,9 @@ void ReadConfigFile(map<string, string>& mapSettingsRet,
         mapMultiSettingsRet[strKey].push_back(it->value[0]);
     }
 }
-    boost::filesystem::pathGetPidFile("-pid", "calcoins.pid");
+    boost::filesystem::path GetPidFile()
 {
-    boost::filesystem::pathPidFile(GetArg("-pid", "calcoins.pid"));
+    boost::filesystem::path pathPidFile(GetArg("-pid", "calcoins.pid"));
 
     if (!pathPidFile.is_complete()) pathPidFile = GetDataDir() / pathPidFile;
     return pathPidFile;
