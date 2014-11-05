@@ -80,7 +80,7 @@ void Shutdown(void* parg)
         delete pwalletMain;
         CreateThread(ExitTimeout, NULL);
         Sleep(50);
-        printf("CalCoins exited\n\n");
+        printf("calcoins exited\n\n");
         fExit = true;
 #ifndef QT_GUI
         // ensure non UI client get's exited here, but let Bitcoin-Qt reach return 0; in bitcoin.cpp
@@ -134,20 +134,13 @@ bool AppInit(int argc, char* argv[])
 
         if (mapArgs.count("-?") || mapArgs.count("--help"))
         {
-            // First part of help message is specific to CalCoins server / RPC client
-            std::string strUsage = _("CalCoins version") + " " + FormatFullVersion() + "\n\n" +
+            // First part of help message is specific to calcoins server / RPC client
+            std::string strUsage = _("calcoins version") + " " + FormatFullVersion() + "\n\n" +
                 _("Usage:") + "\n" +
-<<<<<<< HEAD
                   "  calcoins [options]                     " + "\n" +
                   "  calcoins [options] <command> [params]  " + _("Send command to -server or calcoins") + "\n" +
                   "  calcoins [options] help                " + _("List commands") + "\n" +
                   "  calcoins [options] help <command>      " + _("Get help for a command") + "\n";
-=======
-                  "  calcoins [options]                     " + "\n" +
-                  "  calcoins [options] <command> [params]  " + _("Send command to -server or foocoin") + "\n" +
-                  "  calcoins [options] help                " + _("List commands") + "\n" +
-                  "  calcoins [options] help <command>      " + _("Get help for a command") + "\n";
->>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
 
             strUsage += "\n" + HelpMessage();
 
@@ -157,11 +150,7 @@ bool AppInit(int argc, char* argv[])
 
         // Command-line RPC
         for (int i = 1; i < argc; i++)
-<<<<<<< HEAD
             if (!IsSwitchChar(argv[i][0]) && !boost::algorithm::istarts_with(argv[i], "calcoins:"))
-=======
-            if (!IsSwitchChar(argv[i][0]) && !boost::algorithm::istarts_with(argv[i], "calcoins:"))
->>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
                 fCommandLine = true;
 
         if (fCommandLine)
@@ -201,13 +190,13 @@ int main(int argc, char* argv[])
 
 bool static InitError(const std::string &str)
 {
-    uiInterface.ThreadSafeMessageBox(str, _("CalCoins"), CClientUIInterface::OK | CClientUIInterface::MODAL);
+    uiInterface.ThreadSafeMessageBox(str, _("calcoins"), CClientUIInterface::OK | CClientUIInterface::MODAL);
     return false;
 }
 
 bool static InitWarning(const std::string &str)
 {
-    uiInterface.ThreadSafeMessageBox(str, _("CalCoins"), CClientUIInterface::OK | CClientUIInterface::ICON_EXCLAMATION | CClientUIInterface::MODAL);
+    uiInterface.ThreadSafeMessageBox(str, _("calcoins"), CClientUIInterface::OK | CClientUIInterface::ICON_EXCLAMATION | CClientUIInterface::MODAL);
     return true;
 }
 
@@ -231,13 +220,8 @@ extern double GetDifficulty(const CBlockIndex* blockindex = NULL);
 std::string HelpMessage()
 {
     string strUsage = _("Options:") + "\n" +
-<<<<<<< HEAD
         "  -conf=<file>           " + _("Specify configuration file (default: calcoins.conf)") + "\n" +
         "  -pid=<file>            " + _("Specify pid file (default: calcoins.pid)") + "\n" +
-=======
-        "  -conf=<file>           " + _("Specify configuration file (default: calcoins.conf)") + "\n" +
-        "  -pid=<file>            " + _("Specify pid file (default: calcoins.pid)") + "\n" +
->>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
         "  -gen                   " + _("Generate coins") + "\n" +
         "  -gen=0                 " + _("Don't generate coins") + "\n" +
         "  -datadir=<dir>         " + _("Specify data directory") + "\n" +
@@ -248,7 +232,7 @@ std::string HelpMessage()
         "  -socks=<n>             " + _("Select the version of socks proxy to use (4-5, default: 5)") + "\n" +
         "  -tor=<ip:port>         " + _("Use proxy to reach tor hidden services (default: same as -proxy)") + "\n"
         "  -dns                   " + _("Allow DNS lookups for -addnode, -seednode and -connect") + "\n" +
-        "  -port=<port>           " + _("Listen for connections on <port> (default: 55884 or testnet: 45884)") + "\n" +
+        "  -port=<port>           " + _("Listen for connections on <port> (default: 61213 or testnet: 41313)") + "\n" +
         "  -maxconnections=<n>    " + _("Maintain at most <n> connections to peers (default: 125)") + "\n" +
         "  -addnode=<ip>          " + _("Add a node to connect to and attempt to keep the connection open") + "\n" +
         "  -connect=<ip>          " + _("Connect only to the specified node(s)") + "\n" +
@@ -264,7 +248,13 @@ std::string HelpMessage()
         "  -bantime=<n>           " + _("Number of seconds to keep misbehaving peers from reconnecting (default: 86400)") + "\n" +
         "  -maxreceivebuffer=<n>  " + _("Maximum per-connection receive buffer, <n>*1000 bytes (default: 5000)") + "\n" +
         "  -maxsendbuffer=<n>     " + _("Maximum per-connection send buffer, <n>*1000 bytes (default: 1000)") + "\n" +
-
+#ifdef USE_UPNP
+#if USE_UPNP
+        "  -upnp                  " + _("Use UPnP to map the listening port (default: 1 when listening)") + "\n" +
+#else
+        "  -upnp                  " + _("Use UPnP to map the listening port (default: 0)") + "\n" +
+#endif
+#endif
         "  -detachdb              " + _("Detach block and address databases. Increases shutdown time (default: 0)") + "\n" +
         "  -paytxfee=<amt>        " + _("Fee per KB to add to transactions you send") + "\n" +
         "  -mininput=<amt>        " + _("When creating transactions, ignore inputs with value less than this (default: 0.0001)") + "\n" +
@@ -284,7 +274,7 @@ std::string HelpMessage()
 #endif
         "  -rpcuser=<user>        " + _("Username for JSON-RPC connections") + "\n" +
         "  -rpcpassword=<pw>      " + _("Password for JSON-RPC connections") + "\n" +
-        "  -rpcport=<port>        " + _("Listen for JSON-RPC connections on <port> (default: 55883)") + "\n" +
+        "  -rpcport=<port>        " + _("Listen for JSON-RPC connections on <port> (default: 61212)") + "\n" +
         "  -rpcallowip=<ip>       " + _("Allow JSON-RPC connections from specified IP address") + "\n" +
         "  -rpcconnect=<ip>       " + _("Send commands to node running on <ip> (default: 127.0.0.1)") + "\n" +
         "  -blocknotify=<cmd>     " + _("Execute command when the best block changes (%s in cmd is replaced by block hash)") + "\n" +
@@ -306,7 +296,7 @@ std::string HelpMessage()
     return strUsage;
 }
 
-/** Initialize CalCoins.
+/** Initialize calcoins.
  *  @pre Parameters should be parsed and config file should be read.
  */
 bool AppInit2()
@@ -439,17 +429,13 @@ bool AppInit2()
 
     // ********************************************************* Step 4: application initialization: dir lock, daemonize, pidfile, debug log
 
-<<<<<<< HEAD
     // Make sure only a single calcoins process is using the data directory.
-=======
-    // Make sure only a single calcoins process is using the data directory.
->>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
     boost::filesystem::path pathLockFile = GetDataDir() / ".lock";
     FILE* file = fopen(pathLockFile.string().c_str(), "a"); // empty lock file; created if it doesn't exist.
     if (file) fclose(file);
     static boost::interprocess::file_lock lock(pathLockFile.string().c_str());
     if (!lock.try_lock())
-        return InitError(strprintf(_("Cannot obtain a lock on data directory %s.  CalCoins is probably already running."), GetDataDir().string().c_str()));
+        return InitError(strprintf(_("Cannot obtain a lock on data directory %s.  calcoins is probably already running."), GetDataDir().string().c_str()));
 
 #if !defined(WIN32) && !defined(QT_GUI)
     if (fDaemon)
@@ -476,14 +462,14 @@ bool AppInit2()
     if (!fDebug)
         ShrinkDebugFile();
     printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-    printf("CalCoins version %s (%s)\n", FormatFullVersion().c_str(), CLIENT_DATE.c_str());
+    printf("calcoins version %s (%s)\n", FormatFullVersion().c_str(), CLIENT_DATE.c_str());
     printf("Startup time: %s\n", DateTimeStrFormat("%x %H:%M:%S", GetTime()).c_str());
     printf("Default data directory %s\n", GetDefaultDataDir().string().c_str());
     printf("Used data directory %s\n", GetDataDir().string().c_str());
     std::ostringstream strErrors;
 
     if (fDaemon)
-        fprintf(stdout, "CalCoins server starting\n");
+        fprintf(stdout, "calcoins server starting\n");
 
     int64 nStart;
 
@@ -545,7 +531,9 @@ bool AppInit2()
     fNoListen = !GetBoolArg("-listen", true);
     fDiscover = GetBoolArg("-discover", true);
     fNameLookup = GetBoolArg("-dns", true);
-
+#ifdef USE_UPNP
+    fUseUPnP = GetBoolArg("-upnp", USE_UPNP);
+#endif
 
     bool fBound = false;
     if (!fNoListen)
@@ -602,11 +590,7 @@ bool AppInit2()
         strErrors << _("Error loading blkindex.dat") << "\n";
 
     // as LoadBlockIndex can take several minutes, it's possible the user
-<<<<<<< HEAD
     // requested to kill calcoins-qt during the last operation. If so, exit.
-=======
-    // requested to kill calcoins-qt during the last operation. If so, exit.
->>>>>>> 6f17bffb73fd7c67fc0eeb4ac93fefdd377fded6
     // As the program has not fully started yet, Shutdown() is possibly overkill.
     if (fRequestShutdown)
     {
@@ -683,10 +667,10 @@ bool AppInit2()
         if (nLoadWalletRet == DB_CORRUPT)
             strErrors << _("Error loading wallet.dat: Wallet corrupted") << "\n";
         else if (nLoadWalletRet == DB_TOO_NEW)
-            strErrors << _("Error loading wallet.dat: Wallet requires newer version of CalCoins") << "\n";
+            strErrors << _("Error loading wallet.dat: Wallet requires newer version of calcoins") << "\n";
         else if (nLoadWalletRet == DB_NEED_REWRITE)
         {
-            strErrors << _("Wallet needed to be rewritten: restart CalCoins to complete") << "\n";
+            strErrors << _("Wallet needed to be rewritten: restart calcoins to complete") << "\n";
             printf("%s", strErrors.str().c_str());
             return InitError(strErrors.str());
         }
@@ -814,4 +798,3 @@ bool AppInit2()
 
     return true;
 }
-
