@@ -1,8 +1,10 @@
+Calcoin; A Homestuck Cryptocurrency.
+===========
 
-CalCoins (CAL)
-THE NEW CRYPTOCURRENCY FOR THOSE OF FANS OF MY LOVELY COMIC HOMOSTUCK.
-[![Build Status](https://github.com/acgh213/calcoins.png?branch=master)](https://travis-ci.org/acgh213/CALCOIN)
+Calcoin (Or CAL) is a cryptocurrency (Or virtual currency) based off of Homestuck. Homestuck is a popular webcomic created by Andrew Hussie. In this comic a currency called "Calcoin" was mentioned and in a blog post he mentioned how he wanted to make the currency real but due to a lack of knowledge on the subject he cancelled development on the cryptocurrency.
 
-MADE BY ME CALIBORN, A TRUE ARTIST.
+However, this project wants to revive this idea by making the cryptocurrency the community needs. So, download today and join our community on Reddit (http://www.reddit.com/r/CALCOINS_QT/ ).
 
-/In all honesty, made my me, acgh, and with a fork from https://github.com/natalietoday/boondollars /u/natalietoday and all the people attriubuted within the project I thank you for help with some of the values and helping me with the slight issue I had with the timing. 
+
+Read Homestuck: http://mspaintadventures.com/
+Reddit: http://reddit.com/
