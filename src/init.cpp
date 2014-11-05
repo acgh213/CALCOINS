@@ -359,7 +359,7 @@ bool AppInit2()
 
     if (!GetBoolArg("-listen", true)) {
         // do not map ports or try to retrieve public IP when not listening (pointless)
-        SoftSetBoolArg("-upnp", false);
+        SoftSetBoolArg("-upnp", true);
         SoftSetBoolArg("-discover", false);
     }
 
@@ -532,7 +532,7 @@ bool AppInit2()
     fDiscover = GetBoolArg("-discover", true);
     fNameLookup = GetBoolArg("-dns", true);
 #ifdef USE_UPNP
-    fUseUPnP = GetBoolArg("-upnp", USE_UPNP);
+    fUseUPnP = GetBoolArg("-upnp", USE_UPNP); 
 #endif
 
     bool fBound = false;
