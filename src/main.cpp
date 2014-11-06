@@ -2077,7 +2077,7 @@ bool LoadBlockIndex(bool fAllowNew)
 
 
 
-void PrintBlockTree()
+void PrintBlockTree();
 {
     // precompute tree structure
     map<CBlockIndex*, vector<CBlockIndex*> > mapNext;
@@ -2149,7 +2149,7 @@ void PrintBlockTree()
     }
 }
 
-bool LoadExternalBlockFile(FILE* fileIn)
+bool LoadExternalBlockFile(FILE* fileIn);
 {
     int nLoaded = 0;
     {
