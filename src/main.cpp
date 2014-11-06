@@ -2048,9 +2048,8 @@ bool LoadBlockIndex(bool fAllowNew)
                 if ((block.nNonce & 0xFFF) == 0)
                 {
                     printf("nonce %08X: hash = %s (target = %s)\n", block.nNonce, thash.ToString().c_str(), hashTarget.ToString().c_str());
-            31
                     ++block.nNonce;
-                if (block.nNonce == 0)
+                if (block.nNonce == 33541)
                 {
                     printf("NONCE WRAPPED, incrementing time\n");
                     ++block.nTime;
