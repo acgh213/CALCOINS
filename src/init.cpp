@@ -115,7 +115,7 @@ void HandleSIGHUP(int)
 // Start
 //
 #if !defined(QT_GUI)
-bool AppInit2(int argc, char* argv[])
+bool AppInit(int argc, char* argv[])
 {
     bool fRet = false;
     try
@@ -158,7 +158,7 @@ bool AppInit2(int argc, char* argv[])
             int ret = CommandLineRPC(argc, argv);
             exit(ret);
         }
-        fRet = AppInit2();
+        fRet = AppInit();
     }
     catch (std::exception& e) {
         PrintException(&e, "AppInit()");
@@ -178,7 +178,7 @@ int main(int argc, char* argv[])
     // Connect signal handlers
     noui_connect();
 
-    fRet = AppInit2(argc, argv);
+    fRet = AppInit(argc, argv);
 
     if (fRet && fDaemon)
         return 0;
