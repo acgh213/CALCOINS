@@ -1,0 +1,40 @@
+ src/net.cpp:
+
+ LINE 1000  {"some website name", "somewebsite.org or ip x.x.x.x"},
+Add in site near final build, not now. 
+
+Redesign wallet
+
+setup website
+
+introduce logo and size properly
+
+Ports and Network Changes
+
+Ok, now we need to give the new coin a unique port range to use. You'll need two ports, one for RPC connections (for miners to connect to) and one for P2P Connections. You can find a good list of reserved ports here: http://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers Most any ports will work assuming they are 1: Over port 1024 and 2: not used by something else. I'd suggest something in the high numbers, good examples include 56679 and 56680 or 12365 and 12366.
+
+For this example we're going to use 55883 for RPC and 55884 for P2P. In the foocoin sources, these ports are already set, so go ahead and modify them using your text editor of choice.
+
+Change the RPC/P2P Port in the following files:
+
+src/bitcoinrpc.cpp: (RPC PORT)
+
+ LINE 2893:  ip::tcp::endpoint endpoint(bindAddress, GetArg("-rpcport", 55883));
+ LINE 3169:  if (!d.connect(GetArg("-rpcconnect", "127.0.0.1"), GetArg("-rpcport", "55883")))
+
+src/init.cpp: (P2P PORT + Testnet Port)
+
+ LINE 235 "  -port= " + _("Listen for connections on  (default: 55884 or testnet: 45884)") + "\n" +
+
+You can set the testnet port to any other random port, but remember what you set it to.
+
+src/init.cpp: (RPC PORT)
+
+ LINE 271 "  -rpcport= " + _("Listen for JSON-RPC connections on  (default: 55883)") + "\n" +
+
+src/protocol.h: (Testnet Port + P2P PORT)
+
+ LINE 22 return testnet ? 45883 : 55884;
+
+Set up ports and such
+
