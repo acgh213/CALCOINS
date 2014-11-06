@@ -833,7 +833,7 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
     return nSubsidy + nFees;
 }
 
-static const int64 nTargetTimespan = 1 * 24 * 60 * 60; // CalCoins: half day
+static const int64 nTargetTimespan = 1 * 12 * 60 * 60; // CalCoins: half day
 static const int64 nTargetSpacing = 30; // CalCoins: .5 minute blocks
 static const int64 nInterval = nTargetTimespan / nTargetSpacing;
 
@@ -2028,7 +2028,7 @@ bool LoadBlockIndex(bool fAllowNew)
         printf("%s\n", block.GetHash().ToString().c_str());
         printf("%s\n", hashGenesisBlock.ToString().c_str());
         printf("%s\n", block.hashMerkleRoot.ToString().c_str());
-        assert(block.hashMerkleRoot == uint256("0x"));
+        assert(block.hashMerkleRoot == uint256("229bbb0fea40925d11b579014c0beeea8cee8423690aef93032d972d33757b66"));
 
         // If genesis block hash does not match, then generate new genesis hash.
         if (true && block.GetHash() != hashGenesisBlock) 
