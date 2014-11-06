@@ -2147,9 +2147,10 @@ void PrintBlockTree();
         for (unsigned int i = 0; i < vNext.size(); i++)
             vStack.push_back(make_pair(nCol+i, vNext[i]));
     }
-    
+}
+}
 bool LoadExternalBlockFile(FILE* fileIn)
-
+{
     int nLoaded = 0;
     {
         LOCK(cs_main);
