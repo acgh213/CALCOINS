@@ -2016,7 +2016,7 @@ bool LoadBlockIndex(bool fAllowNew)
         block.nVersion = 1;
         block.nTime    = 1415234351; 
         block.nBits    = 0x1e0ffff0;
-        block.nNonce   = 0;
+        block.nNonce   = 33541;
 
         if (fTestNet)
         {
@@ -2122,7 +2122,7 @@ void PrintBlockTree();
         // print item
         CBlock block;
         block.ReadFromDisk(pindex);
-        printf("%d (%u,%u) %s  %s  tx %d",
+        printf("%d (blk%05u.dat:0x%x) %s tx %"PRIszu"\n")
             pindex->nHeight,
             pindex->nFile,
             pindex->nBlockPos,
