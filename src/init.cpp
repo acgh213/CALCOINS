@@ -158,8 +158,7 @@ bool AppInit(int argc, char* argv[])
             int ret = CommandLineRPC(argc, argv);
             exit(ret);
         }
-
-        fRet = AppInit2();
+        fRet = AppInit();
     }
     catch (std::exception& e) {
         PrintException(&e, "AppInit()");
