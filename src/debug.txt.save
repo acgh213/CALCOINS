@@ -1,0 +1,7 @@
+block.nNonce = 33541 block.GetHash = 
+8f69378bb3ca0b98b1e110bba1178a17dcf056c2f7112af47d89f6f6c1cf$CBlock(hash=8f69378bb3ca0b98b1e1, 
+PoW=00000384421b8bc7ad5b, ver=1, hashPrevB$ 
+CTransaction(hash=229bbb0fea, ver=1, vin.size=1, vout.size=1, 
+nLockTime=0) CTxIn(COutPoint(0000000000, -1), coinbase 
+04ffff001d01041633207374617465$ CTxOut(error)
+  vMerkleTree: 229bbb0fea
