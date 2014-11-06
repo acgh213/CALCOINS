@@ -2149,16 +2149,16 @@ void PrintBlockTree();
     }
 }
 
-    bool LoadExternalBlockFile(FILE* fileIn)
+bool LoadExternalBlockFile(FILE* fileIn)
 {
     int nLoaded = 0;
     {
         LOCK(cs_main);
-        try {
-            CAutoFile blkdat(fileIn, 2*MAX_BLOCK_SIZE, MAX_BLOCK_SIZE+8, SER_DISK, CLIENT_VERSION);
-            unsigned int nPos = 0;
-            while (nPos != (unsigned int)-1 && blkdat.good() && !fRequestShutdown)
-            {
+    try {
+        CAutoFile blkdat(fileIn, SER_DISK, CLIENT_VERSION);
+        unsigned int nPos = 0;
+        while (nPos != (unsigned int)-1 && blkdat.good() && !fRequestShutdown)
+        {
                 unsigned char pchData[65536];
                 do {
                     fseek(blkdat, nPos, SEEK_SET);
