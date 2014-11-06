@@ -2075,9 +2075,7 @@ bool LoadBlockIndex(bool fAllowNew)
     return true;
 }
 
-
-
-void PrintBlockTree();
+    void PrintBlockTree();
 {
     // precompute tree structure
     map<CBlockIndex*, vector<CBlockIndex*> > mapNext;
@@ -2122,7 +2120,7 @@ void PrintBlockTree();
         // print item
         CBlock block;
         block.ReadFromDisk(pindex);
-        printf("%d (blk%05u.dat:0x%x) %s tx %"PRIszu"\n")
+        printf("%d (%u,%u) %s  %s  tx %d",
             pindex->nHeight,
             pindex->nFile,
             pindex->nBlockPos,
@@ -2148,6 +2146,7 @@ void PrintBlockTree();
             vStack.push_back(make_pair(nCol+i, vNext[i]));
     }
 }
+
 }
 bool LoadExternalBlockFile(FILE* fileIn)
 {
