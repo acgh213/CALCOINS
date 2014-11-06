@@ -178,7 +178,7 @@ int main(int argc, char* argv[])
     // Connect signal handlers
     noui_connect();
 
-    fRet = AppInit(argc, argv);
+    fRet = AppInit2(argc, argv);
 
     if (fRet && fDaemon)
         return 0;
