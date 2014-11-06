@@ -115,7 +115,7 @@ void HandleSIGHUP(int)
 // Start
 //
 #if !defined(QT_GUI)
-bool AppInit(int argc, char* argv[])
+bool AppInit2(int argc, char* argv[])
 {
     bool fRet = false;
     try
@@ -158,7 +158,6 @@ bool AppInit(int argc, char* argv[])
             int ret = CommandLineRPC(argc, argv);
             exit(ret);
         }
-
         fRet = AppInit2();
     }
     catch (std::exception& e) {
