@@ -158,7 +158,8 @@ bool AppInit(int argc, char* argv[])
             int ret = CommandLineRPC(argc, argv);
             exit(ret);
         }
-        fRet = AppInit();
+
+        fRet = AppInit2();
     }
     catch (std::exception& e) {
         PrintException(&e, "AppInit()");
@@ -574,12 +575,12 @@ bool AppInit2()
 
     // ********************************************************* Step 6: load blockchain
 
-    if (GetBoolArg("-loadblockindex"))
+    if (GetBoolArg("-loadblockindextest"))
     {
         CTxDB txdb("r");
         txdb.LoadBlockIndex();
         PrintBlockTree();
-        return true;
+        return false;
     }
 
     uiInterface.InitMessage(_("Loading block index..."));

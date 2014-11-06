@@ -29,7 +29,7 @@ CTxMemPool mempool;
 unsigned int nTransactionsUpdated = 0;
 
 map<uint256, CBlockIndex*> mapBlockIndex;
-uint256 hashGenesisBlock("0x8f69378bb3ca0b98b1e110bba1178a17dcf056c2f7112af47d89f6f6c1cf58db");
+uint256 hashGenesisBlock("0x");
 static CBigNum bnProofOfWorkLimit(~uint256(0) >> 20); // starting difficulty is 1 / 2^12
 CBlockIndex* pindexGenesisBlock = NULL;
 int nBestHeight = -1;
@@ -1981,7 +1981,7 @@ bool LoadBlockIndex(bool fAllowNew)
         pchMessageStart[1] = 0xc0;
         pchMessageStart[2] = 0xb8;
         pchMessageStart[3] = 0xdb;
-        hashGenesisBlock = uint256("0x8f69378bb3ca0b98b1e110bba1178a17dcf056c2f7112af47d89f6f6c1cf58db");
+        hashGenesisBlock = uint256("0x");
     }
 
     //
@@ -2016,12 +2016,12 @@ bool LoadBlockIndex(bool fAllowNew)
         block.nVersion = 1;
         block.nTime    = 1415234351; 
         block.nBits    = 0x1e0ffff0;
-        block.nNonce   = 33541;
+        block.nNonce   = 0;
 
         if (fTestNet)
         {
             block.nTime    = 1415234351;
-            block.nNonce   = 33541;
+            block.nNonce   = 0;
         }
 
         //// debug print
@@ -2048,8 +2048,9 @@ bool LoadBlockIndex(bool fAllowNew)
                 if ((block.nNonce & 0xFFF) == 0)
                 {
                     printf("nonce %08X: hash = %s (target = %s)\n", block.nNonce, thash.ToString().c_str(), hashTarget.ToString().c_str());
-                    ++block.nNonce;
-                if (block.nNonce == 33541)
+                }
+                ++block.nNonce;
+                if (block.nNonce == 0)
                 {
                     printf("NONCE WRAPPED, incrementing time\n");
                     ++block.nTime;
@@ -2075,7 +2076,9 @@ bool LoadBlockIndex(bool fAllowNew)
     return true;
 }
 
-    void PrintBlockTree();
+
+
+void PrintBlockTree()
 {
     // precompute tree structure
     map<CBlockIndex*, vector<CBlockIndex*> > mapNext;
@@ -2147,17 +2150,16 @@ bool LoadBlockIndex(bool fAllowNew)
     }
 }
 
-}
 bool LoadExternalBlockFile(FILE* fileIn)
 {
     int nLoaded = 0;
     {
         LOCK(cs_main);
-    try {
-        CAutoFile blkdat(fileIn, SER_DISK, CLIENT_VERSION);
-        unsigned int nPos = 0;
-        while (nPos != (unsigned int)-1 && blkdat.good() && !fRequestShutdown)
-        {
+        try {
+            CAutoFile blkdat(fileIn, SER_DISK, CLIENT_VERSION);
+            unsigned int nPos = 0;
+            while (nPos != (unsigned int)-1 && blkdat.good() && !fRequestShutdown)
+            {
                 unsigned char pchData[65536];
                 do {
                     fseek(blkdat, nPos, SEEK_SET);

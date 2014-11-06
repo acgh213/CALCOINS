@@ -12,7 +12,7 @@ extern CWallet* pwalletMain;
 
 void StartShutdown();
 void Shutdown(void* parg);
-bool AppInit();
+bool AppInit2();
 std::string HelpMessage();
 
 #endif
