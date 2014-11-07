@@ -4,7 +4,7 @@
 // Copyright (c) 2013 adam m.
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
-
+//Super awesome
 #include "main.h"
 #include "wallet.h"
 #include "db.h"
