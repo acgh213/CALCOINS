@@ -1,4 +1,4 @@
 language: cpp
 before_install: sudo apt-get update
 install: sudo apt-get install git build-essential libssl-dev libboost-all-dev libdb++-dev libminiupnpc-dev qt-sdk -y
-script: cd src && make -f makefile.unix USE_UPNP= && cd .. && qmake "USE_UPNP=" && make
+script: cd src && make -f makefile.unix USE_UPNP= &&
